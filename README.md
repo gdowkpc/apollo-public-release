@@ -29,8 +29,14 @@ Future supported Apollo release builds may be published in this repository.
 
 ## Release index
 
-- [Apollo CJ-1 Beta v66](https://github.com/gdowkpc/apollo-public-release/releases/tag/apollo-cj1-beta-v66) (prerelease)
+No Apollo binaries are currently authorized for public download.
 
 Listed platform families do not imply that a public build is currently
 available for each platform. See the [Releases](https://github.com/gdowkpc/apollo-public-release/releases)
 page for available builds.
+
+## Publication policy
+
+Apollo binary and build assets are published here only after explicit
+authorization for that specific publication. Development, early, RC, beta,
+test, fixture, and qualification artifacts are not public release assets.
