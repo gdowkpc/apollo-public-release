@@ -29,8 +29,8 @@ Future supported Apollo release builds may be published in this repository.
 
 ## Release index
 
-- **Android / CJ-1:** Apollo CJ-1 1.0.1 build 68 is available through
-  [GitHub Releases](https://github.com/gdowkpc/apollo-public-release/releases).
+- **Android / CJ-1:** Apollo CJ-1 1.0.2 build 69 is available through
+  [GitHub Releases](https://github.com/gdowkpc/apollo-public-release/releases/tag/cj1-v1.0.2).
 
 Listed platform families do not imply that a public build is currently
 available for each platform. See the [Releases](https://github.com/gdowkpc/apollo-public-release/releases)
