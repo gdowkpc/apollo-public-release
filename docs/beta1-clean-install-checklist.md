@@ -17,7 +17,7 @@ or hidden deployment command.
 ## Windows x64 — Build 93
 
 - [ ] Follow the [Windows owner guide](windows-beta1.md).
-- [ ] Download Build 93 package R2 and verify ZIP SHA-256
+- [ ] Download `Apollo-Windows-Beta-Build-93-Explorer-Compatible.zip` and verify ZIP SHA-256
       `d8a395b0a73a1c4d9ae90c56928b128154175fe18706077eca4e49dbd5a85950`.
 - [ ] Open or extract the ZIP with Windows Explorer and confirm the application,
       launcher, `sdr`, and `windows-support` contents are visible.

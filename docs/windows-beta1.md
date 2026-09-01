@@ -2,13 +2,14 @@
 
 ## Download and verify
 
-Download the [Build 93 package R2 ZIP](https://github.com/gdowkpc/apollo-public-release/releases/download/windows-v1.0.0-beta1-build93-r2/ApolloPassiveReceive-1.0.0-build.93-windows-x64.zip).
-Package R2 contains the unchanged qualified Build 93 files in a ZIP that opens
-normally in Windows Explorer.
+Download the uniquely named [Build 93 Explorer-compatible ZIP](https://github.com/gdowkpc/apollo-public-release/releases/download/windows-v1.0.0-beta1-build93-r2/Apollo-Windows-Beta-Build-93-Explorer-Compatible.zip).
+It contains the unchanged qualified Build 93 files and opens normally in
+Windows Explorer. Do not use an older download with the generic
+`ApolloPassiveReceive-1.0.0-build.93-windows-x64.zip` filename.
 In Command Prompt, verify it before extraction:
 
 ```bat
-certutil -hashfile ApolloPassiveReceive-1.0.0-build.93-windows-x64.zip SHA256
+certutil -hashfile Apollo-Windows-Beta-Build-93-Explorer-Compatible.zip SHA256
 ```
 
 The result must be
