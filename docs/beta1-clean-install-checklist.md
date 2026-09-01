@@ -1,9 +1,9 @@
 # Apollo Beta 1 clean-install checklist
 
 Garrett should perform this checklist using only this public repository and its
-linked release assets. Record the exact output for every hash and stop at the
-first mismatch. Do not use a development checkout, retained credential, manual
-allowlist entry, or hidden deployment command.
+linked release assets. Record exact hash output and stop at the first mismatch.
+Do not use a development checkout, retained credential, manual allowlist entry,
+or hidden deployment command.
 
 ## Common preflight
 
@@ -33,30 +33,46 @@ allowlist entry, or hidden deployment command.
 Stop and report `WINDOWS OWNER INSTALL BLOCKED` if the coordinator prerequisite
 cannot be completed through the public owner workflow.
 
-## Raspberry Pi / Linux ARM64 — Build 92
+## Raspberry Pi 5 / Raspberry Pi OS 64-bit — Build 92
 
-- [ ] Verify the Build 92 ZIP and its SHA-256.
-- [ ] Confirm whether the Pi already has the supported Apollo managed-release
-      bootstrap and device identity.
+- [ ] Confirm a fresh Raspberry Pi 5 Model B running Raspberry Pi OS (64-bit),
+      Debian 13 `trixie`, with account `pi`, network access, a supported
+      RTL-SDR, and at least 2 GiB free.
+- [ ] Follow only the [Pi owner guide](pi-beta1.md).
+- [ ] Download `apollo-pi-bootstrap-beta1.sh` from release
+      `pi-bootstrap-v1.0.0-beta1`.
+- [ ] Verify its SHA-256 is
+      `02bbe13df5bb9015a24b510d7ab324d4ef590c3c2ea19869234c4e362c85ef65`.
+- [ ] Run the single documented `sudo bash apollo-pi-bootstrap-beta1.sh`
+      command. Do not supply arguments.
+- [ ] Confirm all bounded stages complete and the script independently verifies
+      the public Build 92 ZIP as
+      `ee3819e971aa49b856da8045f2447baff3fc4d871d573cffe7e3ff5dc02dc071`.
+- [ ] Enter this receiver's decimal location and sign in interactively to
+      RepeaterBook; verify no password appears in shell history.
+- [ ] Record the new Device ID. Confirm it is unique and do not reuse any desk
+      Pi identity or credential.
+- [ ] If approval is pending, run `apollo-onboard check-approval` until the
+      established flow reports registration complete.
+- [ ] Access `http://127.0.0.1:17882/` locally or through the documented SSH
+      tunnel; do not expose the port to the LAN.
+- [ ] Confirm Build 92, source `a7a8447f…`, node-agent Build 50,
+      `production_review`, and required audio.
+- [ ] Save intended scan bands/ranges and choose **Automatic** or explicitly
+      justified **Not applicable** reference calibration.
+- [ ] Run **Validate and start receiver**; require receiver open, ready, and
+      changing scan state.
+- [ ] Record the Device ID, reboot the Pi, and confirm both services return,
+      the same Device ID remains, the UI returns, and scanning resumes.
+- [ ] Confirm observation and audio queues are empty or actively draining.
+- [ ] If organic RF occurs, verify one qualified observation/audio association,
+      no duplicate report, and continued scanning. Absence of traffic is not a
+      failure.
+- [ ] Confirm no private source checkout, copied credential, manual JSON edit,
+      or internal deployment command was needed.
 
-For a clean Pi, stop before extraction or system changes and report:
-
-`PI OWNER INSTALL BLOCKED — PUBLIC CLEAN-PI BOOTSTRAP IS MISSING`
-
-Do not manually create credentials, policies, allowlists, custody directories,
-service units, rollback state, or a managed-release baseline. Build 92 cannot
-pass this clean-install checklist until a generic supported bootstrap is
-published and separately qualified.
-
-For an already managed Pi only, the coordinator may run the existing managed
-release procedure. Afterward:
-
-- [ ] Verify Build 92/source `a7a8447f…` and node-agent Build 50.
-- [ ] Access the loopback UI locally or through the documented SSH tunnel.
-- [ ] Confirm the intended ranges and **Automatic**/**Not applicable** reference
-      choice, then validate/start the receiver.
-- [ ] Verify `production_review`, queue health, scanning continuity, and one
-      organic audio-backed delivery if RF traffic occurs.
+Stop and preserve state at the first bootstrap error. Do not manually repair
+service, policy, allowlist, identity, custody, or rollback files.
 
 ## CJ-1 — Build 115
 
@@ -74,8 +90,7 @@ release procedure. Afterward:
 
 ## Result
 
-Record PASS/FAIL/BLOCKED separately for Windows, Pi, and CJ-1. The current
-frozen packages support a complete CJ-1 install/upgrade path and a bounded
-Windows owner setup with coordinator authorization. The public clean-Pi path is
-blocked at its first product bootstrap step; do not call the three-platform
-owner-install gate complete until that is resolved.
+Record PASS/FAIL/BLOCKED separately for Windows, Pi, and CJ-1. The clean Pi
+result is complete only after the new physical Pi proves receiver readiness,
+reboot persistence, stable identity, and resumed scanning; userspace/package
+qualification alone does not substitute for those checks.

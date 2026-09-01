@@ -34,8 +34,19 @@ packaged RTL runtime hashes while running as the automatic
 - Node-agent SHA-256: `916769e2c34b4ab63ebd9635e300653b9176d367da895cecb3c6bf3f54b2b148`
 - `rtl_power` SHA-256: `e6bdf3a1ba496be04b4afa53e04cd5a67d2c0c535250db5150e8426fa758d568`
 
-This exact package is qualified as an unchanged managed-update payload. It is
-not a generic clean-Pi installer.
+This exact package remains the qualified, unchanged managed-update payload. The
+separate initial-install tooling is:
+
+- Bootstrap release: `pi-bootstrap-v1.0.0-beta1`
+- Script: `apollo-pi-bootstrap-beta1.sh`
+- Script size: `19,158` bytes
+- Script SHA-256: `02bbe13df5bb9015a24b510d7ab324d4ef590c3c2ea19869234c4e362c85ef65`
+- Payload: `apollo-pi-bootstrap-beta1-payload.tar.gz`
+- Payload size: `33,522` bytes
+- Payload SHA-256: `077f88e37373354d3712a530c3eb5cc9ad5a4bd97eaa50707f59357a43b895a6`
+
+The bootstrap is installation tooling, not another receiver build. It admits
+only the exact Build 92 identity above and does not replace its release asset.
 
 ## CJ-1
 
