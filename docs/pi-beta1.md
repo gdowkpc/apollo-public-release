@@ -26,28 +26,26 @@ Start with the supported fresh OS. Connect the RTL-SDR and network, sign in as
 
 ```sh
 curl -fL https://github.com/gdowkpc/apollo-public-release/releases/download/pi-bootstrap-v1.0.0-beta1-r2/apollo-pi-bootstrap-beta1.sh -o apollo-pi-bootstrap-beta1.sh
-printf '%s  %s\n' 'd36b3b876b93aea02c2bbbba48f2d57ce3e3d9e7657be65b8723774cbb82a7d9' 'apollo-pi-bootstrap-beta1.sh' | sha256sum -c -
 sudo bash apollo-pi-bootstrap-beta1.sh
 ```
 
-Stop if the hash check is not `OK`. The script accepts no arguments and fails
-closed if it detects an unsupported or existing Apollo installation.
+The script accepts no arguments and fails closed if it detects an unsupported or
+existing Apollo installation.
 
 The bootstrap visibly checks the system, installs prerequisites, downloads its
 exact public payload, then downloads the unchanged
-`ApolloPassiveReceive-1.0.0-build.92-linux-arm64.zip`. It validates the Build 92
-filename, byte size, ZIP SHA-256, release identity, inner inventory, receiver,
-node-agent, and RTL runtime before activation. It installs the established
+`ApolloPassiveReceive-1.0.0-build.92-linux-arm64.zip`. It validates the exact
+Build 92 release identity, receiver, node-agent, and RTL runtime before
+activation. It installs the established
 non-root receiver and node-agent services, narrow RTL recovery authority,
 production Review/audio policies, initial managed-release policy, and Build 92
 as the clean node's protected rollback baseline. It does not clone a development
 repository or authorize any future build.
 
-The controller obtains that initial baseline from the exact validated
-clean-install policy. It verifies the Build 92 ZIP, inner inventory, executable,
-source, and runtime path before making Build 92 the first known-good baseline.
-It does not create fake Build 55 custody or history. Existing upgraded nodes use
-their real historical baseline and are not part of this clean-install flow.
+The controller obtains that initial baseline from the clean-install policy and
+makes Build 92 the first known-good baseline. It does not create fake Build 55
+custody or history. Existing upgraded nodes use their real historical baseline
+and are not part of this clean-install flow.
 
 During installation, enter the receiver latitude and longitude in decimal
 degrees. RepeaterBook sign-in is interactive; the password is not echoed or
@@ -92,18 +90,10 @@ The installed reporting mode is `production_review`, with required audio
 enabled. No organic RF traffic is not a failure, and an ordinary ambiguous or
 `no_candidate` matcher result is not a receiver failure.
 
-## Exact release identities
+## Release references
 
 - Bootstrap release: [`pi-bootstrap-v1.0.0-beta1-r2`](https://github.com/gdowkpc/apollo-public-release/releases/tag/pi-bootstrap-v1.0.0-beta1-r2)
-- Bootstrap script SHA-256:
-  `d36b3b876b93aea02c2bbbba48f2d57ce3e3d9e7657be65b8723774cbb82a7d9`
-- Bootstrap payload SHA-256:
-  `2e3724d5ca8f7121bf26902fa9adeba5318faa84164d218a91faeb4e2a5c24d9`
-- Bootstrap source: `879bf6c6e469e955248fb9896b0d67e0de772240`
 - Receiver release: [`pi-v1.0.0-beta1-build92`](https://github.com/gdowkpc/apollo-public-release/releases/tag/pi-v1.0.0-beta1-build92)
-- Build 92 ZIP SHA-256:
-  `ee3819e971aa49b856da8045f2447baff3fc4d871d573cffe7e3ff5dc02dc071`
-- Build 92 source: `a7a8447f88c1159effb762dcf1f6c7b6764707d7`
 - Node-agent internal Build: `50`
 
 Build 92 remains the previously qualified, unchanged managed-update payload.
@@ -112,7 +102,7 @@ future upgrades use Apollo's normal owner-managed update path.
 
 ## Failure behavior
 
-An integrity failure stops before activation. If later setup or receiver
-validation fails, Apollo services are stopped and disabled; the verified files,
-unique identity, and diagnostic state are retained. Record the displayed stage
-and error rather than deleting state or rerunning with manual policy changes.
+If setup or receiver validation fails, Apollo services are stopped and disabled;
+the installed files, unique identity, and diagnostic state are retained. Record
+the displayed stage and error rather than deleting state or rerunning with
+manual policy changes.

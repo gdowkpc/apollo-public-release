@@ -1,26 +1,22 @@
 # Windows Beta 1 owner guide
 
-## Download and verify
+## Download
 
 Download the [Build 93 Windows ZIP](https://github.com/gdowkpc/apollo-public-release/releases/download/windows-v1.0.0-beta1-build93/ApolloPassiveReceive-1.0.0-build.93-windows-x64.zip).
 It contains the unchanged qualified Build 93 files in a container that opens
 normally in Windows Explorer.
-In Command Prompt, verify it before extraction:
 
-```bat
-certutil -hashfile ApolloPassiveReceive-1.0.0-build.93-windows-x64.zip SHA256
-```
+After the download finishes, open the ZIP file and select **Extract All**. Choose
+a new folder, such as `C:\ApolloPassiveReceive`, and select **Extract**. Run
+Apollo from that extracted folder; do not run it from inside the ZIP file, and do
+not move or delete individual files from the folder.
 
-The result must be
-`d8a395b0a73a1c4d9ae90c56928b128154175fe18706077eca4e49dbd5a85950`.
-
-Extract the complete ZIP into a new folder. Keep every extracted file together.
-Use Zadig to bind WinUSB only to RTL-SDR interface 0 if Windows has not already
-done so. Do not change unrelated USB drivers.
+If Windows does not recognize the RTL-SDR, use Zadig to install WinUSB for
+**RTL-SDR interface 0** only. Do not change drivers for other USB devices.
 
 ## First launch and local UI
 
-Run `Start Apollo Passive Receive.cmd` without administrator elevation. Open
+Run `Start Apollo Passive Receive.cmd`. Open
 `http://127.0.0.1:17882/` on that Windows computer.
 
 On the first-run page:
