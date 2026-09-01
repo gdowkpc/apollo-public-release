@@ -47,11 +47,25 @@ makes Build 92 the first known-good baseline. It does not create fake Build 55
 custody or history. Existing upgraded nodes use their real historical baseline
 and are not part of this clean-install flow.
 
-During installation, enter the receiver latitude and longitude in decimal
-degrees. RepeaterBook sign-in is interactive; the password is not echoed or
-placed in shell arguments. Apollo creates a unique node ID, uses the canonical
-node-agent enrollment exchange, and stores only the issued device credential in
-the protected node-agent state. If approval is pending, rerun:
+During installation, the bootstrap pauses and asks for the receiver location:
+
+1. Enter the receiver's actual **Latitude** (`-90` to `90`) and **Longitude**
+   (`-180` to `180`) in decimal degrees. This tells RepeaterBook where this
+   receiver is operating so qualified evidence can be authorized correctly.
+   The exact coordinates are stored in protected node policy and are not
+   published as a public node location or public listing. Do not substitute
+   another node's coordinates.
+2. Near the end, the bootstrap runs the owner onboarding step and prompts:
+   `RepeaterBook username or email:` and
+   `RepeaterBook password (not echoed or stored by this command):`.
+   Enter the RepeaterBook account credentials at those prompts—not as part of
+   the shell command. They are used once over HTTPS to obtain this Pi's
+   per-device node credential (the token used by the services). The password is
+   not echoed, placed in shell arguments, or stored by the command; only the
+   issued device credential is retained in protected node-agent state.
+
+Apollo creates a unique node ID and uses the canonical node-agent enrollment
+exchange. If approval is pending, rerun:
 
 ```sh
 apollo-onboard check-approval

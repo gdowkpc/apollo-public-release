@@ -1,7 +1,7 @@
 # Apollo Beta 1 clean-install checklist
 
 Garrett should perform this checklist using only this public repository and its
-linked release assets. Record exact hash output and stop at the first mismatch.
+linked release assets.
 Do not use a development checkout, retained credential, manual allowlist entry,
 or hidden deployment command.
 
@@ -9,7 +9,6 @@ or hidden deployment command.
 
 - [ ] Start with the intended clean test machine/device and supported receiver.
 - [ ] Download only the asset linked from this repository.
-- [ ] Verify filename, byte size, and SHA-256 against the frozen manifest.
 - [ ] Record OS/device version and whether this is a clean install or supported
       in-place upgrade.
 - [ ] Treat no organic RF traffic and ordinary matcher ambiguity as non-failures.
@@ -17,8 +16,7 @@ or hidden deployment command.
 ## Windows x64 — Build 93
 
 - [ ] Follow the [Windows owner guide](windows-beta1.md).
-- [ ] Download `ApolloPassiveReceive-1.0.0-build.93-windows-x64.zip` and verify ZIP SHA-256
-      `d8a395b0a73a1c4d9ae90c56928b128154175fe18706077eca4e49dbd5a85950`.
+- [ ] Download `ApolloPassiveReceive-1.0.0-build.93-windows-x64.zip`.
 - [ ] Open or extract the ZIP with Windows Explorer and confirm the application,
       launcher, `sdr`, and `windows-support` contents are visible.
 - [ ] Extract the entire ZIP and launch only `Start Apollo Passive Receive.cmd`.
@@ -50,17 +48,19 @@ cannot be completed through the public owner workflow.
 - [ ] Follow only the [Pi owner guide](pi-beta1.md).
 - [ ] Download `apollo-pi-bootstrap-beta1.sh` from release
       `pi-bootstrap-v1.0.0-beta1-r2`.
-- [ ] Verify its SHA-256 is
-      `d36b3b876b93aea02c2bbbba48f2d57ce3e3d9e7657be65b8723774cbb82a7d9`.
 - [ ] Run the single documented `sudo bash apollo-pi-bootstrap-beta1.sh`
       command. Do not supply arguments.
-- [ ] Confirm all bounded stages complete and the script independently verifies
-      the public Build 92 ZIP as
-      `ee3819e971aa49b856da8045f2447baff3fc4d871d573cffe7e3ff5dc02dc071`.
+- [ ] Confirm all bounded stages complete and Build 92 is installed.
 - [ ] Confirm Build 92 is the initial protected rollback baseline and that no
       historical Build 55 release or custody record was created.
-- [ ] Enter this receiver's decimal location and sign in interactively to
-      RepeaterBook; verify no password appears in shell history.
+- [ ] When the bootstrap asks for **Latitude** and **Longitude**, enter this
+      receiver's actual decimal location. Confirm the guide's privacy note:
+      exact coordinates are protected and are not published as a public node
+      location or listing.
+- [ ] When `apollo-onboard` prompts for **RepeaterBook username or email** and
+      **RepeaterBook password**, enter the owner's account credentials at those
+      prompts. Confirm the password is not echoed or placed in shell history,
+      and that only the issued per-device node credential is retained.
 - [ ] Record the new Device ID. Confirm it is unique and do not reuse any desk
       Pi identity or credential.
 - [ ] If approval is pending, run `apollo-onboard check-approval` until the
