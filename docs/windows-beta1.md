@@ -2,7 +2,9 @@
 
 ## Download and verify
 
-Download the ZIP from the [Build 93 Beta release](https://github.com/gdowkpc/apollo-public-release/releases/tag/windows-v1.0.0-beta1-build93).
+Download the [Build 93 package R2 ZIP](https://github.com/gdowkpc/apollo-public-release/releases/download/windows-v1.0.0-beta1-build93-r2/ApolloPassiveReceive-1.0.0-build.93-windows-x64.zip).
+Package R2 contains the unchanged qualified Build 93 files in a ZIP that opens
+normally in Windows Explorer.
 In Command Prompt, verify it before extraction:
 
 ```bat
@@ -10,7 +12,7 @@ certutil -hashfile ApolloPassiveReceive-1.0.0-build.93-windows-x64.zip SHA256
 ```
 
 The result must be
-`eb9346f994196bc865a45e20fd20fb879c53f9e7bc49606c923d0652610eea6c`.
+`d8a395b0a73a1c4d9ae90c56928b128154175fe18706077eca4e49dbd5a85950`.
 
 Extract the complete ZIP into a new folder. Keep every extracted file together.
 Use Zadig to bind WinUSB only to RTL-SDR interface 0 if Windows has not already

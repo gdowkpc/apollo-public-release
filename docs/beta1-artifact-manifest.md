@@ -5,10 +5,10 @@ named build.
 
 ## Windows x64
 
-- Release: `windows-v1.0.0-beta1-build93`
+- Release: `windows-v1.0.0-beta1-build93-r2`
 - Asset: `ApolloPassiveReceive-1.0.0-build.93-windows-x64.zip`
-- Size: `15,009,016` bytes
-- ZIP SHA-256: `eb9346f994196bc865a45e20fd20fb879c53f9e7bc49606c923d0652610eea6c`
+- Size: `15,592,220` bytes
+- ZIP SHA-256: `d8a395b0a73a1c4d9ae90c56928b128154175fe18706077eca4e49dbd5a85950`
 - Source: `56e6a9079dcbe8eb9952dcd1ab5c7900b6bd9234`
 - Parent: `ebb1e1c83911a2a8e545abce28fc561f691624af`
 - Release Build: `93`
@@ -26,7 +26,12 @@ in FIFO order, with all 19 audio attachments available and no rejection.
 
 Windows RC2 Build 90 remains available at
 [`windows-v1.0.0-rc2-build90`](https://github.com/gdowkpc/apollo-public-release/releases/tag/windows-v1.0.0-rc2-build90)
-as a historical prerelease. Build 93 is the current Windows Beta candidate.
+as a historical prerelease. The original Build 93 package remains available at
+[`windows-v1.0.0-beta1-build93`](https://github.com/gdowkpc/apollo-public-release/releases/tag/windows-v1.0.0-beta1-build93)
+for historical custody: `15,009,016` bytes, ZIP SHA-256
+`eb9346f994196bc865a45e20fd20fb879c53f9e7bc49606c923d0652610eea6c`.
+Build 93 package R2 is the current Windows Beta download; its 31 inner files are
+byte-identical, but its ZIP paths are compatible with Windows Explorer.
 
 Qualification also recorded two inherited source-test failures: the Pi
 bootstrap hash/line-ending fixture and the same-event audio-recapture timing
