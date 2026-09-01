@@ -20,7 +20,8 @@ you are using Apollo.
 
 Open a separate browser window on the same Windows computer and go to
 `http://127.0.0.1:17882/`. This local web page is where you complete setup and
-control Apollo.
+control Apollo. Do not open this address in a remote or in-app browser:
+`127.0.0.1` always means the computer where Apollo is running.
 
 On the first-run page:
 
