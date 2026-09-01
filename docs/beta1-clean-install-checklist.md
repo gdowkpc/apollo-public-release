@@ -18,15 +18,21 @@ or hidden deployment command.
 - [ ] Follow the [Windows owner guide](windows-beta1.md).
 - [ ] Download `ApolloPassiveReceive-1.0.0-build.93-windows-x64.zip`.
 - [ ] Open or extract the ZIP with Windows Explorer and confirm the application,
-      launcher, `sdr`, and `windows-support` contents are visible.
+      launcher, `Open Apollo Local UI.url`, `sdr`, and `windows-support` contents
+      are visible.
 - [ ] Extract the entire ZIP and launch only `Start Apollo Passive Receive.cmd`.
-- [ ] Open `http://127.0.0.1:17882/`; record Build 93 and source `56e6a907…`.
-- [ ] Complete the first-run scan plan. Confirm **Reference calibration** is
-      **Automatic**, or record why the test plan requires **Not applicable**.
+- [ ] Double-click `Open Apollo Local UI.url` in the extracted folder. If needed,
+      open `http://127.0.0.1:17882/` manually on the same Windows computer.
+- [ ] Confirm the page reports Build 93 and source `c8129afa…`.
+- [ ] Complete the first-run scan plan. Leave **Reference calibration** set to
+      **Automatic**.
 - [ ] Run **Validate and start receiver** and require ready/scanning state.
 - [ ] Copy the non-secret Device authorization request; do not expose a token.
 - [ ] Confirm the coordinator has authorized this exact Device ID and installed
       the approved credential-free production Review policy.
+- [ ] Enter the receiver's actual latitude and longitude and save the authorized
+      location. These coordinates are protected and are not published as the
+      public node location or listing.
 - [ ] Only then install the boot service and verify LocalService, automatic
       start, Build 93, intended reporting mode, queue health, and UI access.
 - [ ] In the support view, confirm the sender is not stuck in-flight, the

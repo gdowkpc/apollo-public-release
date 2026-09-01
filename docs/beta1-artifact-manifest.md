@@ -5,16 +5,16 @@ named build.
 
 ## Windows x64
 
-- Release: `windows-v1.0.0-beta1-build93`
+- Release: `windows-v1.0.0-beta1-build93-r3`
 - Current owner-download asset: `ApolloPassiveReceive-1.0.0-build.93-windows-x64.zip`
-- Size: `15,592,220` bytes
-- ZIP SHA-256: `d8a395b0a73a1c4d9ae90c56928b128154175fe18706077eca4e49dbd5a85950`
-- Source: `56e6a9079dcbe8eb9952dcd1ab5c7900b6bd9234`
+- Size: `15,592,608` bytes
+- ZIP SHA-256: `58bf7ed18d329a53e520203f92bd8270643fef0e6db3fe661873da16f091f037`
+- Source: `c8129afa405904ffa29011d83bfcfe914277db51`
 - Parent: `ebb1e1c83911a2a8e545abce28fc561f691624af`
 - Release Build: `93`
-- `ApolloPassiveReceive.exe` SHA-256: `a0696b7de55b57bfffa3ea7679c350639087bc89841dbb8567e7d1f4ee53017e`
+- `ApolloPassiveReceive.exe` SHA-256: `2509ba57d639f7880fa09f8caaa71363b749ffd6bac19a51ae8e2f80931b4c48`
 - `rtl_fm.exe` SHA-256: `c4f13e02d230f0401300f640928a079f62c7637055b8b777aa23a47ff0e18fd9`
-- Canonical inner inventory SHA-256: `605390a952c59f0345ba4c0cd23304d29d63656874f8db9aca890b9d78b8690a`
+- Canonical inner inventory SHA-256: `74e2a96dc118b0dabb3a7e34353c446dfd1e18ee3a7e856c5943a1cdb706f69e`
 
 The qualified Windows node reports the same Build 93 source identity and
 packaged RTL runtime hashes while running as the automatic

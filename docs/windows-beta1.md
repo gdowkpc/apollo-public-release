@@ -2,7 +2,7 @@
 
 ## Download
 
-Download the [Build 93 Windows ZIP](https://github.com/gdowkpc/apollo-public-release/releases/download/windows-v1.0.0-beta1-build93/ApolloPassiveReceive-1.0.0-build.93-windows-x64.zip).
+Download the [Build 93 Windows ZIP](https://github.com/gdowkpc/apollo-public-release/releases/download/windows-v1.0.0-beta1-build93-r3/ApolloPassiveReceive-1.0.0-build.93-windows-x64.zip).
 
 After the download finishes, open the ZIP file and select **Extract All**. Choose
 a new folder, such as `C:\ApolloPassiveReceive`, and select **Extract**. Run
@@ -18,6 +18,10 @@ Double-click `Start Apollo Passive Receive.cmd`. A command window will stay open
 while Apollo is running; this is expected. Do not type into it or close it while
 you are using Apollo.
 
+After the command window appears, double-click `Open Apollo Local UI.url` in the
+same extracted folder. It opens the Apollo setup page in your web browser. If the
+shortcut does not open, manually enter the address below.
+
 Open a separate browser window on the same Windows computer and go to
 `http://127.0.0.1:17882/`. This local web page is where you complete setup and
 control Apollo. Do not open this address in a remote or in-app browser:
@@ -30,9 +34,7 @@ On the first-run page:
 2. Select a scan plan and ranges appropriate for the test location.
 3. Leave RTL-SDR gain blank for automatic selection unless the test plan gives
    an exact fixed gain.
-4. Leave **Reference calibration** set to **Automatic**. This is the normal
-   choice. Select **Not applicable** only if your test instructions specifically
-   tell you to.
+4. Leave **Reference calibration** set to **Automatic**.
 5. Leave **Start automatically next launch** selected when unattended operation
    is intended.
 6. Select **Start Passive Observation**. After later edits, use **Save Scan Plan
@@ -45,7 +47,8 @@ The UI is intentionally localhost-only. Do not create a firewall exception.
 ## Identity, location, and reporting
 
 Apollo creates the Device ID automatically the first time it starts. You do not
-need to enter a Device ID or run a provisioning command.
+need to enter a Device ID, username, password, or provisioning command on
+Windows.
 
 Scroll down to **Device authorization** and check its status:
 
@@ -55,8 +58,11 @@ Scroll down to **Device authorization** and check its status:
 3. After the coordinator confirms this Device ID, return to this panel and select
    **Revalidate authorization**.
 
-Enter latitude and longitude under **Receiver location**, then select **Save
-Authorized Location**. The save succeeds only after the existing Device ID is
+Enter the receiver's actual latitude and longitude under **Receiver location**,
+then select **Save Authorized Location**. These coordinates let RepeaterBook
+authorize and support the node's configured receiver location. The exact
+coordinates are stored in protected policy and are not published as the public
+node location or listing. The save succeeds only after the existing Device ID is
 positively authorized by RepeaterBook.
 
 Production Review is not enabled merely by downloading or launching the ZIP.
@@ -97,3 +103,10 @@ audio delivery operations are now bounded; an item that encounters a transient
 timeout remains queued and retries through the normal sender. The local support
 view shows the sender state, current observation, last attempt, and scheduled
 retry without exposing credentials.
+
+### Build 93 R3
+
+The refreshed Windows package adds `Open Apollo Local UI.url` beside the launcher
+so the owner can open the local setup page without typing the address. It also
+shows the release Build in the page header and provides a visible **Back to
+dashboard** control while editing settings.
