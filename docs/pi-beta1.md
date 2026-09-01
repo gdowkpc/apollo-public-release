@@ -25,8 +25,8 @@ Start with the supported fresh OS. Connect the RTL-SDR and network, sign in as
 `pi`, and run:
 
 ```sh
-curl -fL https://github.com/gdowkpc/apollo-public-release/releases/download/pi-bootstrap-v1.0.0-beta1/apollo-pi-bootstrap-beta1.sh -o apollo-pi-bootstrap-beta1.sh
-printf '%s  %s\n' '02bbe13df5bb9015a24b510d7ab324d4ef590c3c2ea19869234c4e362c85ef65' 'apollo-pi-bootstrap-beta1.sh' | sha256sum -c -
+curl -fL https://github.com/gdowkpc/apollo-public-release/releases/download/pi-bootstrap-v1.0.0-beta1-r2/apollo-pi-bootstrap-beta1.sh -o apollo-pi-bootstrap-beta1.sh
+printf '%s  %s\n' 'd36b3b876b93aea02c2bbbba48f2d57ce3e3d9e7657be65b8723774cbb82a7d9' 'apollo-pi-bootstrap-beta1.sh' | sha256sum -c -
 sudo bash apollo-pi-bootstrap-beta1.sh
 ```
 
@@ -42,6 +42,12 @@ non-root receiver and node-agent services, narrow RTL recovery authority,
 production Review/audio policies, initial managed-release policy, and Build 92
 as the clean node's protected rollback baseline. It does not clone a development
 repository or authorize any future build.
+
+The controller obtains that initial baseline from the exact validated
+clean-install policy. It verifies the Build 92 ZIP, inner inventory, executable,
+source, and runtime path before making Build 92 the first known-good baseline.
+It does not create fake Build 55 custody or history. Existing upgraded nodes use
+their real historical baseline and are not part of this clean-install flow.
 
 During installation, enter the receiver latitude and longitude in decimal
 degrees. RepeaterBook sign-in is interactive; the password is not echoed or
@@ -88,11 +94,12 @@ enabled. No organic RF traffic is not a failure, and an ordinary ambiguous or
 
 ## Exact release identities
 
-- Bootstrap release: `pi-bootstrap-v1.0.0-beta1`
+- Bootstrap release: [`pi-bootstrap-v1.0.0-beta1-r2`](https://github.com/gdowkpc/apollo-public-release/releases/tag/pi-bootstrap-v1.0.0-beta1-r2)
 - Bootstrap script SHA-256:
-  `02bbe13df5bb9015a24b510d7ab324d4ef590c3c2ea19869234c4e362c85ef65`
+  `d36b3b876b93aea02c2bbbba48f2d57ce3e3d9e7657be65b8723774cbb82a7d9`
 - Bootstrap payload SHA-256:
-  `077f88e37373354d3712a530c3eb5cc9ad5a4bd97eaa50707f59357a43b895a6`
+  `2e3724d5ca8f7121bf26902fa9adeba5318faa84164d218a91faeb4e2a5c24d9`
+- Bootstrap source: `879bf6c6e469e955248fb9896b0d67e0de772240`
 - Receiver release: [`pi-v1.0.0-beta1-build92`](https://github.com/gdowkpc/apollo-public-release/releases/tag/pi-v1.0.0-beta1-build92)
 - Build 92 ZIP SHA-256:
   `ee3819e971aa49b856da8045f2447baff3fc4d871d573cffe7e3ff5dc02dc071`

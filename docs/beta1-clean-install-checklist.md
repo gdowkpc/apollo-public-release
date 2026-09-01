@@ -45,14 +45,16 @@ cannot be completed through the public owner workflow.
       RTL-SDR, and at least 2 GiB free.
 - [ ] Follow only the [Pi owner guide](pi-beta1.md).
 - [ ] Download `apollo-pi-bootstrap-beta1.sh` from release
-      `pi-bootstrap-v1.0.0-beta1`.
+      `pi-bootstrap-v1.0.0-beta1-r2`.
 - [ ] Verify its SHA-256 is
-      `02bbe13df5bb9015a24b510d7ab324d4ef590c3c2ea19869234c4e362c85ef65`.
+      `d36b3b876b93aea02c2bbbba48f2d57ce3e3d9e7657be65b8723774cbb82a7d9`.
 - [ ] Run the single documented `sudo bash apollo-pi-bootstrap-beta1.sh`
       command. Do not supply arguments.
 - [ ] Confirm all bounded stages complete and the script independently verifies
       the public Build 92 ZIP as
       `ee3819e971aa49b856da8045f2447baff3fc4d871d573cffe7e3ff5dc02dc071`.
+- [ ] Confirm Build 92 is the initial protected rollback baseline and that no
+      historical Build 55 release or custody record was created.
 - [ ] Enter this receiver's decimal location and sign in interactively to
       RepeaterBook; verify no password appears in shell history.
 - [ ] Record the new Device ID. Confirm it is unique and do not reuse any desk

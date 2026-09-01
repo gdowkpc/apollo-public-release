@@ -52,16 +52,19 @@ qualification pending; no hardware fault was induced for publication.
 This exact package remains the qualified, unchanged managed-update payload. The
 separate initial-install tooling is:
 
-- Bootstrap release: `pi-bootstrap-v1.0.0-beta1`
+- Bootstrap release: `pi-bootstrap-v1.0.0-beta1-r2`
 - Script: `apollo-pi-bootstrap-beta1.sh`
-- Script size: `19,158` bytes
-- Script SHA-256: `02bbe13df5bb9015a24b510d7ab324d4ef590c3c2ea19869234c4e362c85ef65`
+- Script size: `15,749` bytes
+- Script SHA-256: `d36b3b876b93aea02c2bbbba48f2d57ce3e3d9e7657be65b8723774cbb82a7d9`
 - Payload: `apollo-pi-bootstrap-beta1-payload.tar.gz`
-- Payload size: `33,522` bytes
-- Payload SHA-256: `077f88e37373354d3712a530c3eb5cc9ad5a4bd97eaa50707f59357a43b895a6`
+- Payload size: `34,937` bytes
+- Payload SHA-256: `2e3724d5ca8f7121bf26902fa9adeba5318faa84164d218a91faeb4e2a5c24d9`
+- Bootstrap source: `879bf6c6e469e955248fb9896b0d67e0de772240`
 
 The bootstrap is installation tooling, not another receiver build. It admits
 only the exact Build 92 identity above and does not replace its release asset.
+The exact validated clean-install policy makes Build 92 the first known-good
+rollback baseline; no historical Build 55 custody is fabricated.
 
 ## CJ-1
 
