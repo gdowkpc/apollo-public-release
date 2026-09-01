@@ -5,20 +5,35 @@ named build.
 
 ## Windows x64
 
-- Release: `windows-v1.0.0-rc2-build90`
-- Asset: `ApolloPassiveReceive-1.0.0-rc2-build90-windows-x64-portable.zip`
-- Size: `15,011,878` bytes
-- ZIP SHA-256: `5cd9d16fe84d2d04d53716ad9a2d2c5e4ce12b53d27581c5f663704e73b6f40b`
-- Source: `ebb1e1c83911a2a8e545abce28fc561f691624af`
-- Release Build: `90`
-- `ApolloPassiveReceive.exe` SHA-256: `82c1cb990553353aa184843df41d8768bb5da00c267c396a984f0bec762ab122`
+- Release: `windows-v1.0.0-beta1-build93`
+- Asset: `ApolloPassiveReceive-1.0.0-build.93-windows-x64.zip`
+- Size: `15,009,016` bytes
+- ZIP SHA-256: `eb9346f994196bc865a45e20fd20fb879c53f9e7bc49606c923d0652610eea6c`
+- Source: `56e6a9079dcbe8eb9952dcd1ab5c7900b6bd9234`
+- Parent: `ebb1e1c83911a2a8e545abce28fc561f691624af`
+- Release Build: `93`
+- `ApolloPassiveReceive.exe` SHA-256: `a0696b7de55b57bfffa3ea7679c350639087bc89841dbb8567e7d1f4ee53017e`
 - `rtl_fm.exe` SHA-256: `c4f13e02d230f0401300f640928a079f62c7637055b8b777aa23a47ff0e18fd9`
-- Boot-service installer SHA-256: `7f028a36116e4b468d2b2637db16701c4d8462ce0daab6fb64ec66c05dbcc9c4`
-- Canonical inner inventory SHA-256: `0011739b2427084c9aad51b5c5b22f4b1988cb9da489d93fde08f1a26e44a14e`
+- Canonical inner inventory SHA-256: `605390a952c59f0345ba4c0cd23304d29d63656874f8db9aca890b9d78b8690a`
 
-The qualified Windows node reports the same Build 90 source identity and
+The qualified Windows node reports the same Build 93 source identity and
 packaged RTL runtime hashes while running as the automatic
-`ApolloPassiveReceiveBoot` service under `NT AUTHORITY\LocalService`.
+`ApolloPassiveReceiveBoot` service under `NT AUTHORITY\LocalService`. Build 93
+bounds observation and audio delivery operations so one stalled network
+operation cannot indefinitely block later queued evidence. The physical
+qualification preserved and delivered all 19 originally stalled observations
+in FIFO order, with all 19 audio attachments available and no rejection.
+
+Windows RC2 Build 90 remains available at
+[`windows-v1.0.0-rc2-build90`](https://github.com/gdowkpc/apollo-public-release/releases/tag/windows-v1.0.0-rc2-build90)
+as a historical prerelease. Build 93 is the current Windows Beta candidate.
+
+Qualification also recorded two inherited source-test failures: the Pi
+bootstrap hash/line-ending fixture and the same-event audio-recapture timing
+test. Both were present on parent `ebb1e1c83911a2a8e545abce28fc561f691624af`
+and were not introduced or altered by the Build 93 repair. Exact-device
+unattended Windows RTL recovery remains installed with organic fault
+qualification pending; no hardware fault was induced for publication.
 
 ## Raspberry Pi / Linux ARM64
 

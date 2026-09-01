@@ -14,11 +14,11 @@ or hidden deployment command.
       in-place upgrade.
 - [ ] Treat no organic RF traffic and ordinary matcher ambiguity as non-failures.
 
-## Windows x64 — Build 90
+## Windows x64 — Build 93
 
 - [ ] Follow the [Windows owner guide](windows-beta1.md).
 - [ ] Extract the entire ZIP and launch only `Start Apollo Passive Receive.cmd`.
-- [ ] Open `http://127.0.0.1:17882/`; record Build 90 and source `ebb1e1c8…`.
+- [ ] Open `http://127.0.0.1:17882/`; record Build 93 and source `56e6a907…`.
 - [ ] Complete the first-run scan plan. Confirm **Reference calibration** is
       **Automatic**, or record why the test plan requires **Not applicable**.
 - [ ] Run **Validate and start receiver** and require ready/scanning state.
@@ -26,9 +26,14 @@ or hidden deployment command.
 - [ ] Confirm the coordinator has authorized this exact Device ID and installed
       the approved credential-free production Review policy.
 - [ ] Only then install the boot service and verify LocalService, automatic
-      start, Build 90, intended reporting mode, queue health, and UI access.
+      start, Build 93, intended reporting mode, queue health, and UI access.
+- [ ] In the support view, confirm the sender is not stuck in-flight, the
+      observation/audio queues are not stuck, and any transient delivery retry
+      retains the current queue head.
 - [ ] Observe one organic qualified event if RF traffic occurs; verify its audio
       association and no duplicate. Absence of traffic is not a failure.
+- [ ] Record exact-device unattended RTL recovery as **installed — organic fault
+      qualification pending**. Do not induce a hardware fault.
 
 Stop and report `WINDOWS OWNER INSTALL BLOCKED` if the coordinator prerequisite
 cannot be completed through the public owner workflow.

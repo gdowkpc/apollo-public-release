@@ -2,15 +2,15 @@
 
 ## Download and verify
 
-Download the ZIP from the [Build 90 release](https://github.com/gdowkpc/apollo-public-release/releases/tag/windows-v1.0.0-rc2-build90).
+Download the ZIP from the [Build 93 Beta release](https://github.com/gdowkpc/apollo-public-release/releases/tag/windows-v1.0.0-beta1-build93).
 In Command Prompt, verify it before extraction:
 
 ```bat
-certutil -hashfile ApolloPassiveReceive-1.0.0-rc2-build90-windows-x64-portable.zip SHA256
+certutil -hashfile ApolloPassiveReceive-1.0.0-build.93-windows-x64.zip SHA256
 ```
 
 The result must be
-`5cd9d16fe84d2d04d53716ad9a2d2c5e4ce12b53d27581c5f663704e73b6f40b`.
+`eb9346f994196bc865a45e20fd20fb879c53f9e7bc49606c923d0652610eea6c`.
 
 Extract the complete ZIP into a new folder. Keep every extracted file together.
 Use Zadig to bind WinUSB only to RTL-SDR interface 0 if Windows has not already
@@ -39,6 +39,13 @@ On the first-run page:
 
 The UI is intentionally localhost-only. Do not create a firewall exception.
 
+Build 93 fixes a delivery condition where one stalled network operation could
+indefinitely prevent later queued observations from being sent. Observation and
+audio delivery operations are now bounded; an item that encounters a transient
+timeout remains queued and retries through the normal sender. The local support
+view shows the sender state, current observation, last attempt, and scheduled
+retry without exposing credentials.
+
 ## Identity, location, and reporting
 
 Under **Device authorization**, copy the non-secret authorization request and
@@ -62,7 +69,7 @@ open an elevated PowerShell window in the extracted package directory and run:
 
 The installer must finish with service `ApolloPassiveReceiveBoot` running as
 `NT AUTHORITY\LocalService`. Reopen `http://127.0.0.1:17882/` and verify the
-release is Build 90, reporting is the intended mode, the receiver is scanning,
+release is Build 93, reporting is the intended mode, the receiver is scanning,
 and observation/audio queue depths are not stuck.
 
 ## Everyday controls and support
@@ -73,5 +80,7 @@ and observation/audio queue depths are not stuck.
 - **Export Diagnostics** creates a sanitized local support report.
 - The optional USB stability action is not part of normal installation. Use it
   only for a confirmed long-run USB suspend/recovery problem.
+- Exact-device unattended Windows RTL recovery is installed, but organic fault
+  qualification remains pending. Do not induce a hardware fault to test it.
 - Removing the application data destroys this Device ID and credential. Do not
   do that during an upgrade or ordinary troubleshooting.
