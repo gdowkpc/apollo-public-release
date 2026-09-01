@@ -14,8 +14,13 @@ If Windows does not recognize the RTL-SDR, use Zadig to install WinUSB for
 
 ## First launch and local UI
 
-Run `Start Apollo Passive Receive.cmd`. Open
-`http://127.0.0.1:17882/` on that Windows computer.
+Double-click `Start Apollo Passive Receive.cmd`. A command window will stay open
+while Apollo is running; this is expected. Do not type into it or close it while
+you are using Apollo.
+
+Open a separate browser window on the same Windows computer and go to
+`http://127.0.0.1:17882/`. This local web page is where you complete setup and
+control Apollo.
 
 On the first-run page:
 
@@ -38,7 +43,10 @@ The UI is intentionally localhost-only. Do not create a firewall exception.
 
 ## Identity, location, and reporting
 
-Check **Device authorization**:
+Apollo creates the Device ID automatically the first time it starts. You do not
+need to enter a Device ID or run a provisioning command.
+
+Scroll down to **Device authorization** and check its status:
 
 1. If the status says **Ready for RepeaterBook**, continue. No action is needed.
 2. Otherwise, select **Copy authorization request** and send the copied text to
