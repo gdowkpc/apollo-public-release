@@ -3,8 +3,6 @@
 ## Download
 
 Download the [Build 93 Windows ZIP](https://github.com/gdowkpc/apollo-public-release/releases/download/windows-v1.0.0-beta1-build93/ApolloPassiveReceive-1.0.0-build.93-windows-x64.zip).
-It contains the unchanged qualified Build 93 files in a container that opens
-normally in Windows Explorer.
 
 After the download finishes, open the ZIP file and select **Extract All**. Choose
 a new folder, such as `C:\ApolloPassiveReceive`, and select **Extract**. Run
@@ -26,8 +24,9 @@ On the first-run page:
 2. Select a scan plan and ranges appropriate for the test location.
 3. Leave RTL-SDR gain blank for automatic selection unless the test plan gives
    an exact fixed gain.
-4. Leave **Reference calibration** at **Automatic**. Use **Not applicable** only
-   when the test plan explicitly says reference calibration does not apply.
+4. Leave **Reference calibration** set to **Automatic**. This is the normal
+   choice. Select **Not applicable** only if your test instructions specifically
+   tell you to.
 5. Leave **Start automatically next launch** selected when unattended operation
    is intended.
 6. Select **Start Passive Observation**. After later edits, use **Save Scan Plan
@@ -37,19 +36,15 @@ On the first-run page:
 
 The UI is intentionally localhost-only. Do not create a firewall exception.
 
-Build 93 fixes a delivery condition where one stalled network operation could
-indefinitely prevent later queued observations from being sent. Observation and
-audio delivery operations are now bounded; an item that encounters a transient
-timeout remains queued and retries through the normal sender. The local support
-view shows the sender state, current observation, last attempt, and scheduled
-retry without exposing credentials.
-
 ## Identity, location, and reporting
 
-Under **Device authorization**, copy the non-secret authorization request and
-send it to the Beta coordinator. The download contains no reusable credential
-or reporting authorization. After the coordinator confirms that this exact
-device is authorized, select **Revalidate authorization**.
+Check **Device authorization**:
+
+1. If the status says **Ready for RepeaterBook**, continue. No action is needed.
+2. Otherwise, select **Copy authorization request** and send the copied text to
+   the Beta coordinator. It contains no password or device credential.
+3. After the coordinator confirms this Device ID, return to this panel and select
+   **Revalidate authorization**.
 
 Enter latitude and longitude under **Receiver location**, then select **Save
 Authorized Location**. The save succeeds only after the existing Device ID is
@@ -82,3 +77,14 @@ and observation/audio queue depths are not stuck.
   qualification remains pending. Do not induce a hardware fault to test it.
 - Removing the application data destroys this Device ID and credential. Do not
   do that during an upgrade or ordinary troubleshooting.
+
+## Change log
+
+### Build 93
+
+Build 93 fixes a delivery condition where one stalled network operation could
+indefinitely prevent later queued observations from being sent. Observation and
+audio delivery operations are now bounded; an item that encounters a transient
+timeout remains queued and retries through the normal sender. The local support
+view shows the sender state, current observation, last attempt, and scheduled
+retry without exposing credentials.
