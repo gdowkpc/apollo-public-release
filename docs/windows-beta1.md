@@ -2,7 +2,7 @@
 
 ## Download
 
-Download the [Build 97 Windows installer](https://github.com/gdowkpc/apollo-public-release/releases/download/windows-v1.0.0-beta1-build97/ApolloPassiveReceive-1.0.0-build.97-windows-x64-setup.exe).
+Download the [Build 98 Windows installer](https://github.com/gdowkpc/apollo-public-release/releases/download/windows-v1.0.0-beta1-build98/ApolloPassiveReceive-1.0.0-build.98-windows-x64-setup.exe).
 
 After the download finishes, run the installer and accept the normal Windows
 User Account Control prompt. The installer places the complete Apollo runtime
@@ -22,7 +22,10 @@ the computer where Apollo is running.
 
 On a clean installation, complete the pages in this order:
 
-1. **Connect to RepeaterBook** and authenticate as the node owner.
+1. **Connect to RepeaterBook**, enter the owner's RepeaterBook username and
+   password in Apollo's local page, and select **Sign in and connect this
+   node**. Apollo sends the credentials once over HTTPS to authenticate the
+   owner and does not save the RepeaterBook password.
 2. Let Apollo create the canonical node and secure its credential for the
    protected Windows service. Accept the normal UAC prompt when Apollo displays
    **Securing Apollo service**. Do not copy or paste a node credential.
@@ -47,7 +50,7 @@ listing.
 
 After onboarding, verify the service is `ApolloPassiveReceiveBoot`, starts
 automatically as `NT AUTHORITY\LocalService`, and the local page reports Build
-97. Reporting should show `production_review`; observation and audio queues
+98. Reporting should show `production_review`; observation and audio queues
 should be empty or draining normally.
 
 ## Everyday controls and support
@@ -64,6 +67,17 @@ should be empty or draining normally.
   do that during an upgrade or ordinary troubleshooting.
 
 ## Change log
+
+### Build 98
+
+Build 98 replaces the incomplete Build 97 browser account-link path with direct
+RepeaterBook owner authentication from Apollo's localhost-only setup page. On
+success, Apollo creates one canonical Windows node, securely stores its
+device-specific credential through the existing protected LocalService
+transition, and continues to Receiver Location. The RepeaterBook password is
+used only for the bounded HTTPS provisioning request and is not retained.
+Build 98 otherwise preserves the Build 97 launch, onboarding order, receiver,
+reporting, RF, CTCSS, audio, gain, sender, and recovery behavior.
 
 ### Build 97
 
