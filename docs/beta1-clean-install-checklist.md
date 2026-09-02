@@ -13,28 +13,30 @@ or hidden deployment command.
       in-place upgrade.
 - [ ] Treat no organic RF traffic and ordinary matcher ambiguity as non-failures.
 
-## Windows x64 — Build 93
+## Windows x64 — Build 96
 
 - [ ] Follow the [Windows owner guide](windows-beta1.md).
-- [ ] Download `ApolloPassiveReceive-1.0.0-build.93-windows-x64.zip`.
-- [ ] Open or extract the ZIP with Windows Explorer and confirm the application,
-      launcher, `Open Apollo Local UI.url`, `sdr`, and `windows-support` contents
-      are visible.
-- [ ] Extract the entire ZIP and launch only `Start Apollo Passive Receive.cmd`.
-- [ ] Double-click `Open Apollo Local UI.url` in the extracted folder. If needed,
-      open `http://127.0.0.1:17882/` manually on the same Windows computer.
-- [ ] Confirm the page reports Build 93 and source `c8129afa…`.
-- [ ] Complete the first-run scan plan. Leave **Reference calibration** set to
-      **Automatic**.
-- [ ] Run **Validate and start receiver** and require ready/scanning state.
-- [ ] Copy the non-secret Device authorization request; do not expose a token.
-- [ ] Confirm the coordinator has authorized this exact Device ID and installed
-      the approved credential-free production Review policy.
-- [ ] Enter the receiver's actual latitude and longitude and save the authorized
-      location. These coordinates are protected and are not published as the
-      public node location or listing.
-- [ ] Only then install the boot service and verify LocalService, automatic
-      start, Build 93, intended reporting mode, queue health, and UI access.
+- [ ] Download `ApolloPassiveReceive-1.0.0-build.96-windows-x64-setup.exe`.
+- [ ] Verify installer SHA-256
+      `d4d882c0c560bf1d54a9f18ef91e08a179a6273e4e0925d38802393aeb30aad3`.
+- [ ] Run the installer and accept the normal Windows UAC prompt.
+- [ ] Open Apollo from the installed shortcut. If needed, open
+      `http://127.0.0.1:17882/` manually on the same Windows computer.
+- [ ] Confirm the page reports Build 96 and source `20aab0b2…`.
+- [ ] Select **Connect to RepeaterBook** and authenticate as the owner.
+- [ ] Confirm a new canonical Apollo node is created automatically; record its
+      Device ID and public label without exposing its credential.
+- [ ] Confirm **Securing Apollo service** invokes normal UAC and completes the
+      protected LocalService transition without credential copy/paste or a
+      separate service-setup step.
+- [ ] Set and save **Receiver Location** before the Scan Plan. Coordinates are
+      protected and are not published as the public node location or listing.
+- [ ] Select the Scan Plan, leave **Reference calibration** set to **Automatic**,
+      and confirm the configured gain is 14.4 dB for this test baseline.
+- [ ] Select **Start Receiver** and require ready/scanning state with advancing
+      sweeps.
+- [ ] Verify LocalService, automatic start, Build 96, `production_review`, queue
+      health, and UI access.
 - [ ] In the support view, confirm the sender is not stuck in-flight, the
       observation/audio queues are not stuck, and any transient delivery retry
       retains the current queue head.
@@ -43,8 +45,9 @@ or hidden deployment command.
 - [ ] Record exact-device unattended RTL recovery as **installed — organic fault
       qualification pending**. Do not induce a hardware fault.
 
-Stop and report `WINDOWS OWNER INSTALL BLOCKED` if the coordinator prerequisite
-cannot be completed through the public owner workflow.
+Stop and report `WINDOWS OWNER INSTALL BLOCKED` at the first owner-flow
+divergence. Do not substitute a manual credential, allowlist, service command,
+or development checkout.
 
 ## Raspberry Pi 5 / Raspberry Pi OS 64-bit — Build 92
 

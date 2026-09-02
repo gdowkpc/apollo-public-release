@@ -2,83 +2,53 @@
 
 ## Download
 
-Download the [Build 93 Windows ZIP](https://github.com/gdowkpc/apollo-public-release/releases/download/windows-v1.0.0-beta1-build93-r3/ApolloPassiveReceive-1.0.0-build.93-windows-x64.zip).
+Download the [Build 96 Windows installer](https://github.com/gdowkpc/apollo-public-release/releases/download/windows-v1.0.0-beta1-build96/ApolloPassiveReceive-1.0.0-build.96-windows-x64-setup.exe).
 
-After the download finishes, open the ZIP file and select **Extract All**. Choose
-a new folder, such as `C:\ApolloPassiveReceive`, and select **Extract**. Run
-Apollo from that extracted folder; do not run it from inside the ZIP file, and do
-not move or delete individual files from the folder.
+After the download finishes, run the installer and accept the normal Windows
+User Account Control prompt. The installer places the complete Apollo runtime
+and protected Windows service support files together; no ZIP extraction or
+manual service command is required.
 
 If Windows does not recognize the RTL-SDR, use Zadig to install WinUSB for
 **RTL-SDR interface 0** only. Do not change drivers for other USB devices.
 
 ## First launch and local UI
 
-Double-click `Start Apollo Passive Receive.cmd`. A command window will stay open
-while Apollo is running; this is expected. Do not type into it or close it while
-you are using Apollo.
+Open Apollo from the shortcut created by the installer. If the browser does not
+open automatically, go to `http://127.0.0.1:17882/` on the same Windows
+computer. This local web page is where you complete setup and control Apollo.
+Do not open this address in a remote or in-app browser: `127.0.0.1` always means
+the computer where Apollo is running.
 
-After the command window appears, double-click `Open Apollo Local UI.url` in the
-same extracted folder. It opens the Apollo setup page in your web browser. If the
-shortcut does not open, manually enter the address below.
+On a clean installation, complete the pages in this order:
 
-Open a separate browser window on the same Windows computer and go to
-`http://127.0.0.1:17882/`. This local web page is where you complete setup and
-control Apollo. Do not open this address in a remote or in-app browser:
-`127.0.0.1` always means the computer where Apollo is running.
-
-On the first-run page:
-
-1. Confirm the bundled RTL-SDR runtime is ready and device index `0` is the
-   intended receiver.
-2. Select a scan plan and ranges appropriate for the test location.
-3. Leave RTL-SDR gain blank for automatic selection unless the test plan gives
-   an exact fixed gain.
-4. Leave **Reference calibration** set to **Automatic**.
-5. Leave **Start automatically next launch** selected when unattended operation
-   is intended.
-6. Select **Start Passive Observation**. After later edits, use **Save Scan Plan
-   and Restart**.
-7. In **Receiver self-test**, select **Validate and start receiver** and require
-   a ready/running receiver before continuing.
+1. **Connect to RepeaterBook** and authenticate as the node owner.
+2. Let Apollo create the canonical node and secure its credential for the
+   protected Windows service. Accept the normal UAC prompt when Apollo displays
+   **Securing Apollo service**. Do not copy or paste a node credential.
+3. Set **Receiver Location** using the map, **Use My Location**, a draggable
+   marker, or manual coordinates, then save it.
+4. Select the intended **Scan Plan**. Leave **Reference calibration** set to
+   **Automatic** unless the test plan says otherwise.
+5. Leave RTL-SDR gain at its owner-configured value; for the current controlled
+   test baseline this is 14.4 dB.
+6. Select **Start Receiver** and require the receiver to reach ready/scanning
+   state with advancing sweeps.
 
 The UI is intentionally localhost-only. Do not create a firewall exception.
 
 ## Identity, location, and reporting
 
-Apollo creates the Device ID automatically the first time it starts. You do not
-need to enter a Device ID, username, password, or provisioning command on
-Windows.
+Apollo creates the Device ID automatically during authenticated onboarding. A
+normal new-node installation does not require administrator approval, a manual
+allowlist entry, or credential copy/paste. The exact receiver coordinates are
+stored in protected policy and are not published as the public node location or
+listing.
 
-Scroll down to **Device authorization** and check its status:
-
-1. If the status says **Ready for RepeaterBook**, continue. No action is needed.
-2. Otherwise, select **Copy authorization request** and send the copied text to
-   the Beta coordinator. It contains no password or device credential.
-3. After the coordinator confirms this Device ID, return to this panel and select
-   **Revalidate authorization**.
-
-Enter the receiver's actual latitude and longitude under **Receiver location**,
-then select **Save Authorized Location**. These coordinates let RepeaterBook
-authorize and support the node's configured receiver location. The exact
-coordinates are stored in protected policy and are not published as the public
-node location or listing. The save succeeds only after the existing Device ID is
-positively authorized by RepeaterBook.
-
-Production Review is not enabled merely by downloading or launching the ZIP.
-The persistent boot-service installer also requires the coordinator-installed,
-credential-free production Review policy. Do not construct that policy or copy
-another device's credential. Once the coordinator confirms those prerequisites,
-open an elevated PowerShell window in the extracted package directory and run:
-
-```powershell
-& ".\windows-support\Install Apollo Boot Service.ps1" -PackageRoot $PWD
-```
-
-The installer must finish with service `ApolloPassiveReceiveBoot` running as
-`NT AUTHORITY\LocalService`. Reopen `http://127.0.0.1:17882/` and verify the
-release is Build 93, reporting is the intended mode, the receiver is scanning,
-and observation/audio queue depths are not stuck.
+After onboarding, verify the service is `ApolloPassiveReceiveBoot`, starts
+automatically as `NT AUTHORITY\LocalService`, and the local page reports Build
+96. Reporting should show `production_review`; observation and audio queues
+should be empty or draining normally.
 
 ## Everyday controls and support
 
@@ -94,6 +64,16 @@ and observation/audio queue depths are not stuck.
   do that during an upgrade or ordinary troubleshooting.
 
 ## Change log
+
+### Build 96
+
+Build 96 adds the clean Windows owner-install flow: authenticated RepeaterBook
+connection, automatic canonical node provisioning, protected LocalService
+credential transition, map-based receiver location, scan-plan selection, and
+receiver start in the required order. It also carries forward the Build 93
+bounded sender repair and the qualified Windows receiver, gain, and unattended
+recovery behavior. The downloadable installer contains the complete runtime and
+the protected-service helpers required by onboarding.
 
 ### Build 93
 

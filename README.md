@@ -8,7 +8,7 @@ than committed to Git.
 
 | Platform | Frozen candidate | Owner guide | Release |
 | --- | --- | --- | --- |
-| Windows x64 | Apollo Passive Receive 1.0.0 Beta 1, Build 93 | [Windows owner guide](docs/windows-beta1.md) | [Download package](https://github.com/gdowkpc/apollo-public-release/releases/download/windows-v1.0.0-beta1-build93-r3/ApolloPassiveReceive-1.0.0-build.93-windows-x64.zip) |
+| Windows x64 | Apollo Passive Receive 1.0.0 Beta 1, Build 96 | [Windows owner guide](docs/windows-beta1.md) | [Download installer](https://github.com/gdowkpc/apollo-public-release/releases/download/windows-v1.0.0-beta1-build96/ApolloPassiveReceive-1.0.0-build.96-windows-x64-setup.exe) |
 | Raspberry Pi 5 / Linux ARM64 | Apollo Passive Receive 1.0.0, Build 92 | [Clean-install Pi owner guide](docs/pi-beta1.md) | [Bootstrap R2](https://github.com/gdowkpc/apollo-public-release/releases/tag/pi-bootstrap-v1.0.0-beta1-r2) / [Build 92](https://github.com/gdowkpc/apollo-public-release/releases/tag/pi-v1.0.0-beta1-build92) |
 | CJ-1 | Apollo Listening 1.0.12-provider-evidence.2, Build 115 | [CJ-1 owner guide](docs/cj1-beta1.md) | [Download](https://github.com/gdowkpc/apollo-public-release/releases/tag/cj1-v1.0.12-beta1-build115) |
 
@@ -29,10 +29,8 @@ Apollo Windows RC2 Build 90 remains available at its
 [historical release](https://github.com/gdowkpc/apollo-public-release/releases/tag/windows-v1.0.0-rc2-build90).
 It is not the current Windows Beta candidate.
 
-The original Build 93 ZIP container remains available under an explicitly
-historical asset name. The refreshed Build 93 download contains the qualified
-runtime plus the owner-facing local UI shortcut and navigation improvements in a
-Windows Explorer-compatible ZIP.
+Windows Build 93 remains available through its historical prereleases. It is
+superseded by Build 96 and is no longer the current owner download.
 
 Apollo CJ-1 1.0.2 Build 69 remains available at its
 [historical release](https://github.com/gdowkpc/apollo-public-release/releases/tag/cj1-v1.0.2).
