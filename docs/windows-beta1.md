@@ -2,7 +2,7 @@
 
 ## Download
 
-Download the [Build 96 Windows installer](https://github.com/gdowkpc/apollo-public-release/releases/download/windows-v1.0.0-beta1-build96/ApolloPassiveReceive-1.0.0-build.96-windows-x64-setup.exe).
+Download the [Build 97 Windows installer](https://github.com/gdowkpc/apollo-public-release/releases/download/windows-v1.0.0-beta1-build97/ApolloPassiveReceive-1.0.0-build.97-windows-x64-setup.exe).
 
 After the download finishes, run the installer and accept the normal Windows
 User Account Control prompt. The installer places the complete Apollo runtime
@@ -47,7 +47,7 @@ listing.
 
 After onboarding, verify the service is `ApolloPassiveReceiveBoot`, starts
 automatically as `NT AUTHORITY\LocalService`, and the local page reports Build
-96. Reporting should show `production_review`; observation and audio queues
+97. Reporting should show `production_review`; observation and audio queues
 should be empty or draining normally.
 
 ## Everyday controls and support
@@ -64,6 +64,17 @@ should be empty or draining normally.
   do that during an upgrade or ordinary troubleshooting.
 
 ## Change log
+
+### Build 97
+
+Build 97 corrects the clean-install owner launch and first-run routing exposed
+by Build 96 testing. The installed shortcut and post-install action start the
+local Apollo UI host without presenting a command window, wait up to 30 seconds
+for bounded localhost readiness, and open the owner UI in the default browser.
+A clean node starts at **Connect to RepeaterBook**; receiver location, scan plan,
+and receiver start remain unavailable until canonical provisioning and the
+protected LocalService transition complete. No receiver, reporting, RF, CTCSS,
+audio, gain, or recovery behavior was changed for this correction.
 
 ### Build 96
 

@@ -13,16 +13,16 @@ or hidden deployment command.
       in-place upgrade.
 - [ ] Treat no organic RF traffic and ordinary matcher ambiguity as non-failures.
 
-## Windows x64 — Build 96
+## Windows x64 — Build 97
 
 - [ ] Follow the [Windows owner guide](windows-beta1.md).
-- [ ] Download `ApolloPassiveReceive-1.0.0-build.96-windows-x64-setup.exe`.
+- [ ] Download `ApolloPassiveReceive-1.0.0-build.97-windows-x64-setup.exe`.
 - [ ] Verify installer SHA-256
-      `d4d882c0c560bf1d54a9f18ef91e08a179a6273e4e0925d38802393aeb30aad3`.
+      `29fe00aba708f1b3b53e6a6ca5b1437233fe9e9d359bf9c3c496481c48b0b1fc`.
 - [ ] Run the installer and accept the normal Windows UAC prompt.
 - [ ] Open Apollo from the installed shortcut. If needed, open
       `http://127.0.0.1:17882/` manually on the same Windows computer.
-- [ ] Confirm the page reports Build 96 and source `20aab0b2…`.
+- [ ] Confirm the page reports Build 97 and source `154656cd…`.
 - [ ] Select **Connect to RepeaterBook** and authenticate as the owner.
 - [ ] Confirm a new canonical Apollo node is created automatically; record its
       Device ID and public label without exposing its credential.
@@ -35,7 +35,7 @@ or hidden deployment command.
       and confirm the configured gain is 14.4 dB for this test baseline.
 - [ ] Select **Start Receiver** and require ready/scanning state with advancing
       sweeps.
-- [ ] Verify LocalService, automatic start, Build 96, `production_review`, queue
+- [ ] Verify LocalService, automatic start, Build 97, `production_review`, queue
       health, and UI access.
 - [ ] In the support view, confirm the sender is not stuck in-flight, the
       observation/audio queues are not stuck, and any transient delivery retry
