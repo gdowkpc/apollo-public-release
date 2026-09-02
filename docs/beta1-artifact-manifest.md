@@ -5,30 +5,31 @@ named build.
 
 ## Windows x64
 
-- Release: `windows-v1.0.0-beta1-build96`
-- Current owner-download asset: `ApolloPassiveReceive-1.0.0-build.96-windows-x64-setup.exe`
-- Installer size: `12,551,244` bytes
-- Installer SHA-256: `d4d882c0c560bf1d54a9f18ef91e08a179a6273e4e0925d38802393aeb30aad3`
-- Portable ZIP: `ApolloPassiveReceive-1.0.0-build.96-windows-x64.zip`
-- ZIP size: `14,971,509` bytes
-- ZIP SHA-256: `640ae9934da4302cc92d432a5d0387a4b1e1d5099f61ae9bc340491124761935`
-- Source: `20aab0b2dd92791ebad33ef36bc72aa3146c6a1a`
-- Build timestamp: `2026-09-02T00:08:20.198Z`
-- Release Build: `96`
-- `ApolloPassiveReceive.exe` SHA-256: `8412f98ac08bc96a407a68c1f0c0b2d160663a5a560bf8dd008343d369c937ee`
+- Release: `windows-v1.0.0-beta1-build97`
+- Current owner-download asset: `ApolloPassiveReceive-1.0.0-build.97-windows-x64-setup.exe`
+- Installer size: `12,553,394` bytes
+- Installer SHA-256: `29fe00aba708f1b3b53e6a6ca5b1437233fe9e9d359bf9c3c496481c48b0b1fc`
+- Portable ZIP: `ApolloPassiveReceive-1.0.0-build.97-windows-x64.zip`
+- ZIP size: `14,972,514` bytes
+- ZIP SHA-256: `3221557fad55fb99c27c6ee30336d5dd05edcbaf4615ccfe7c076365c6189f8a`
+- Source: `154656cd1eaa8bf3e3203e8b37ad93cd1de1855a`
+- Build timestamp: `2026-09-02T00:58:45.170Z`
+- Release Build: `97`
+- `ApolloPassiveReceive.exe` SHA-256: `ba6befb74da820cc6536602aa5f3fbb050cfd145e655e545ebf55ad76607f3d3`
 - `rtl_fm.exe` SHA-256: `c4f13e02d230f0401300f640928a079f62c7637055b8b777aa23a47ff0e18fd9`
-- Canonical inner inventory SHA-256: `d4a514f347908f67e6db08c6e35973d8a5b3b17ee48825c2ea3717e369a505b5`
+- Canonical inner inventory SHA-256: `1a0319bfef89653db3f3e076253b1f3bdb642e18e813493c4890d851b99e5032`
 
-Build 96 is the exact retained clean-install candidate. Its installer and ZIP
+Build 97 is the exact retained clean-install candidate. Its installer and ZIP
 were constructed once, admitted through the durable pre-install retention gate,
 and published without rebuilding. The installer contains the automatic
 RepeaterBook provisioning flow and protected LocalService transition. It also
-carries forward the Build 93 bounded sender repair.
+carries forward the Build 93 bounded sender repair and corrects the first-run
+launch-to-browser and authentication-first routing exposed by Build 96 testing.
 
 Windows RC2 Build 90 remains available at
 [`windows-v1.0.0-rc2-build90`](https://github.com/gdowkpc/apollo-public-release/releases/tag/windows-v1.0.0-rc2-build90)
-as a historical prerelease. Build 93 remains available through its historical
-prereleases. The original Build 93 container remains on the
+as a historical prerelease. Builds 93 and 96 remain available through their
+historical prereleases. The original Build 93 container remains on the
 Build 93 release as
 `ApolloPassiveReceive-1.0.0-build.93-windows-x64-original-historical.zip` for
 historical custody: `15,009,016` bytes, ZIP SHA-256
