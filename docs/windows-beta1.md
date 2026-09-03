@@ -2,12 +2,13 @@
 
 ## Download
 
-The Windows download is temporarily unavailable while the next Beta build is
-being qualified. Do not install Build 98: its clean-install owner application
-did not present the required authentication-first setup page.
+**Build 99 Qualification Candidate** is available solely for the current
+clean-download/install owner-flow test. It is not the current Windows Beta
+release and is not offered through Apollo's update path.
 
-When a replacement build is published, download it from the
-[Apollo Downloads page](https://www.repeaterbook.com/apollo/downloads/), run
+[Download Build 99](https://www.repeaterbook.com/apollo/downloads/) from the
+Apollo Downloads page, verify its SHA-256 shown there is
+`4d404cd57d66bfa21fdd62f1dba1f15a7a83ddd613b288b51af9a030f5bb904a`, run
 the installer, and accept the normal Windows
 User Account Control prompt. The installer places the complete Apollo runtime
 and protected Windows service support files together; no ZIP extraction or
