@@ -1,7 +1,8 @@
 # Apollo Windows Beta 1 — Build 98
 
-Build 98 is the retained clean Windows owner-install candidate for end-to-end
-controlled qualification.
+Build 98 is permanently non-publishable. Clean-install qualification proved
+that its packaged owner application rendered receiver settings instead of the
+required authentication-first setup page.
 
 - Replaces the incomplete Build 97 browser account-link flow with direct
   RepeaterBook owner authentication from Apollo's localhost-only setup page.
@@ -25,5 +26,6 @@ Exact identity:
 - Portable ZIP SHA-256: `583ab1ec73944c0189661c3d101cb287122d50ed8aa52630f3fd5c0358bb6891`
 - Canonical inner inventory SHA-256: `00106f3a185331213a57de8b0dafd59b1a32fd942d096ca4e247e6ec6edf4e16`
 
-Build 97 remains available as a historical prerelease and should not be used
-for the current clean-owner end-to-end test.
+The exact retained Build 98 artifacts, hashes, and provenance remain historical
+failure evidence only. They must not be presented as a current or recommended
+Windows Beta download.

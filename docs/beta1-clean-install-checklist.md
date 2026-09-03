@@ -13,16 +13,20 @@ or hidden deployment command.
       in-place upgrade.
 - [ ] Treat no organic RF traffic and ordinary matcher ambiguity as non-failures.
 
-## Windows x64 — Build 98
+## Windows x64 — temporarily unavailable
 
-- [ ] Follow the [Windows owner guide](windows-beta1.md).
-- [ ] Download `ApolloPassiveReceive-1.0.0-build.98-windows-x64-setup.exe`.
-- [ ] Verify installer SHA-256
-      `bf44963db7cee7ae89f473fb346efe824df18650f9f26fbd7f0bd33a99c68ce3`.
+- [ ] Do not begin a Windows clean-install test until the
+      [Apollo Downloads page](https://www.repeaterbook.com/apollo/downloads/)
+      presents a newly qualified Windows build.
+- [ ] Do not install Build 98. It is retained as a non-publishable historical
+      clean-install failure.
+- [ ] Follow the [Windows owner guide](windows-beta1.md) after a replacement is
+      published.
 - [ ] Run the installer and accept the normal Windows UAC prompt.
 - [ ] Open Apollo from the installed shortcut. If needed, open
       `http://127.0.0.1:17882/` manually on the same Windows computer.
-- [ ] Confirm the page reports Build 98 and source `7e87866f…`.
+- [ ] Confirm the page reports the exact replacement build and source shown on
+      the Apollo Downloads page.
 - [ ] Select **Connect to RepeaterBook**, enter the owner's RepeaterBook
       username/password locally, and select **Sign in and connect this node**.
       Confirm the password is not retained.
@@ -37,7 +41,7 @@ or hidden deployment command.
       and confirm the configured gain is 14.4 dB for this test baseline.
 - [ ] Select **Start Receiver** and require ready/scanning state with advancing
       sweeps.
-- [ ] Verify LocalService, automatic start, Build 98, `production_review`, queue
+- [ ] Verify LocalService, automatic start, the downloaded build, `production_review`, queue
       health, and UI access.
 - [ ] In the support view, confirm the sender is not stuck in-flight, the
       observation/audio queues are not stuck, and any transient delivery retry

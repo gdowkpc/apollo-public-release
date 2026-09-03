@@ -3,10 +3,16 @@
 Verify the complete SHA-256 before installing. Do not substitute a similarly
 named build.
 
-## Windows x64
+## Windows x64 — no current owner download
 
-- Release: `windows-v1.0.0-beta1-build98`
-- Current owner-download asset: `ApolloPassiveReceive-1.0.0-build.98-windows-x64-setup.exe`
+The Windows download is temporarily unavailable while the next Beta build is
+being qualified. Build 98 is retained below as historical failure evidence; it
+is not a current, recommended, or installable Beta release.
+
+### Historical non-publishable Build 98
+
+- Historical release identity: `windows-v1.0.0-beta1-build98`
+- Historical installer: `ApolloPassiveReceive-1.0.0-build.98-windows-x64-setup.exe`
 - Installer size: `12,552,133` bytes
 - Installer SHA-256: `bf44963db7cee7ae89f473fb346efe824df18650f9f26fbd7f0bd33a99c68ce3`
 - Portable ZIP: `ApolloPassiveReceive-1.0.0-build.98-windows-x64.zip`
@@ -19,12 +25,11 @@ named build.
 - `rtl_fm.exe` SHA-256: `c4f13e02d230f0401300f640928a079f62c7637055b8b777aa23a47ff0e18fd9`
 - Canonical inner inventory SHA-256: `00106f3a185331213a57de8b0dafd59b1a32fd942d096ca4e247e6ec6edf4e16`
 
-Build 98 is the exact retained clean-install qualification candidate. Its installer and ZIP
-were constructed once, admitted through the durable pre-install retention gate,
-and published without rebuilding. The installer replaces Build 97's incomplete
-browser account-link path with direct RepeaterBook owner authentication and
-retains the protected LocalService transition. It also carries forward the
-Build 93 bounded sender repair and the Build 97 launch/onboarding corrections.
+Build 98 was constructed once and admitted through the durable pre-install
+retention gate, but it failed clean-install qualification because the packaged
+owner application did not expose the authentication-first setup UI. It is
+permanently non-publishable. The exact bytes, hashes, and provenance above are
+preserved only as historical failure evidence.
 
 Windows RC2 Build 90 remains available at
 [`windows-v1.0.0-rc2-build90`](https://github.com/gdowkpc/apollo-public-release/releases/tag/windows-v1.0.0-rc2-build90)
