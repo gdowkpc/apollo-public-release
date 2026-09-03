@@ -2,9 +2,13 @@
 
 ## Download
 
-Download the [Build 98 Windows installer](https://github.com/gdowkpc/apollo-public-release/releases/download/windows-v1.0.0-beta1-build98/ApolloPassiveReceive-1.0.0-build.98-windows-x64-setup.exe).
+The Windows download is temporarily unavailable while the next Beta build is
+being qualified. Do not install Build 98: its clean-install owner application
+did not present the required authentication-first setup page.
 
-After the download finishes, run the installer and accept the normal Windows
+When a replacement build is published, download it from the
+[Apollo Downloads page](https://www.repeaterbook.com/apollo/downloads/), run
+the installer, and accept the normal Windows
 User Account Control prompt. The installer places the complete Apollo runtime
 and protected Windows service support files together; no ZIP extraction or
 manual service command is required.
@@ -49,8 +53,8 @@ stored in protected policy and are not published as the public node location or
 listing.
 
 After onboarding, verify the service is `ApolloPassiveReceiveBoot`, starts
-automatically as `NT AUTHORITY\LocalService`, and the local page reports Build
-98. Reporting should show `production_review`; observation and audio queues
+automatically as `NT AUTHORITY\LocalService`, and the local page reports the
+downloaded build. Reporting should show `production_review`; observation and audio queues
 should be empty or draining normally.
 
 ## Everyday controls and support
@@ -70,14 +74,10 @@ should be empty or draining normally.
 
 ### Build 98
 
-Build 98 replaces the incomplete Build 97 browser account-link path with direct
-RepeaterBook owner authentication from Apollo's localhost-only setup page. On
-success, Apollo creates one canonical Windows node, securely stores its
-device-specific credential through the existing protected LocalService
-transition, and continues to Receiver Location. The RepeaterBook password is
-used only for the bounded HTTPS provisioning request and is not retained.
-Build 98 otherwise preserves the Build 97 launch, onboarding order, receiver,
-reporting, RF, CTCSS, audio, gain, sender, and recovery behavior.
+Build 98 is non-publishable. Clean-install testing proved that the packaged
+owner application rendered receiver settings instead of the required
+authentication-first setup page. Its retained artifacts and hashes remain
+historical evidence only.
 
 ### Build 97
 

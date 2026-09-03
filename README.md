@@ -8,7 +8,7 @@ than committed to Git.
 
 | Platform | Frozen candidate | Owner guide | Release |
 | --- | --- | --- | --- |
-| Windows x64 | Apollo Passive Receive 1.0.0 Beta 1, Build 98 | [Windows owner guide](docs/windows-beta1.md) | [Download installer](https://github.com/gdowkpc/apollo-public-release/releases/download/windows-v1.0.0-beta1-build98/ApolloPassiveReceive-1.0.0-build.98-windows-x64-setup.exe) |
+| Windows x64 | Temporarily unavailable while the next Beta build is qualified | [Windows owner guide](docs/windows-beta1.md) | No current download |
 | Raspberry Pi 5 / Linux ARM64 | Apollo Passive Receive 1.0.0, Build 92 | [Clean-install Pi owner guide](docs/pi-beta1.md) | [Bootstrap R2](https://github.com/gdowkpc/apollo-public-release/releases/tag/pi-bootstrap-v1.0.0-beta1-r2) / [Build 92](https://github.com/gdowkpc/apollo-public-release/releases/tag/pi-v1.0.0-beta1-build92) |
 | CJ-1 | Apollo Listening 1.0.12-provider-evidence.2, Build 115 | [CJ-1 owner guide](docs/cj1-beta1.md) | [Download](https://github.com/gdowkpc/apollo-public-release/releases/tag/cj1-v1.0.12-beta1-build115) |
 
@@ -30,8 +30,10 @@ Apollo Windows RC2 Build 90 remains available at its
 It is not the current Windows Beta candidate.
 
 Windows Builds 93, 96, and 97 remain available through their historical
-prereleases. They are superseded by Build 98 and are no longer the current
-owner download.
+prereleases. Build 98 failed clean-install qualification because its actual
+owner application did not expose the authentication-first setup UI. Build 98
+is preserved as historical evidence and must not be installed or published as
+the current Windows Beta.
 
 Apollo CJ-1 1.0.2 Build 69 remains available at its
 [historical release](https://github.com/gdowkpc/apollo-public-release/releases/tag/cj1-v1.0.2).
