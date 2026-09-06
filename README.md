@@ -10,7 +10,7 @@ than committed to Git.
 | --- | --- | --- | --- |
 | Windows x64 | Temporarily unavailable while the next Beta build is qualified | [Windows owner guide](docs/windows-beta1.md) | No current download |
 | Raspberry Pi 5 / Linux ARM64 | Apollo Passive Receive 1.0.0, Build 92 | [Clean-install Pi owner guide](docs/pi-beta1.md) | [Bootstrap R2](https://github.com/gdowkpc/apollo-public-release/releases/tag/pi-bootstrap-v1.0.0-beta1-r2) / [Build 92](https://github.com/gdowkpc/apollo-public-release/releases/tag/pi-v1.0.0-beta1-build92) |
-| CJ-1 | Apollo Listening 1.0.12-provider-evidence.2, Build 115 | [CJ-1 owner guide](docs/cj1-beta1.md) | [Download](https://github.com/gdowkpc/apollo-public-release/releases/tag/cj1-v1.0.12-beta1-build115) |
+| CJ-1 | Apollo Listening 1.0.12-provider-evidence.3, Build 116 | [CJ-1 owner guide](docs/cj1-beta1.md) | [Download](https://github.com/gdowkpc/apollo-public-release/releases/tag/cj1-v1.0.12-beta1-build116) |
 
 Use the [frozen artifact manifest](docs/beta1-artifact-manifest.md) to verify
 every download. Garrett's end-to-end procedure is the

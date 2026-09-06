@@ -81,20 +81,26 @@ rollback baseline; no historical Build 55 custody is fabricated.
 
 ## CJ-1
 
-- Release: `cj1-v1.0.12-beta1-build115`
-- Asset: `Apollo-CJ1-1.0.12-beta1-build115.apk`
-- Size: `147,674,811` bytes
-- APK SHA-256: `6099e8212b92482fd505911c2627fa288a9940b52fd8296009b9918e9a4db59d`
-- Source: `a746f796e22e1e722d92f0d890264463c5aa6f34`
+- Release: `cj1-v1.0.12-beta1-build116`
+- Asset: `Apollo-CJ1-1.0.12-beta1-build116.apk`
+- Size: `76,887,137` bytes
+- APK SHA-256: `05ec5d417e52d17b1dd6f0c458ca2ebacc58cba26c82e7257f27de6a00f72e6c`
+- Source: `069cb24773c30cd75f4aa7071f2de72391299b2a`
 - Android package: `org.gdowkpc.apollo_node_shell`
-- Version name/code: `1.0.12-provider-evidence.2` / `115`
+- Version name/code: `1.0.12-provider-evidence.3` / `116`
 - App label: `Apollo Listening`
 - Signer certificate SHA-256: `9824f91945459046d25cce94c83cef8a2b8baba246872377e6cb29fd707a69c0`
 - Signature: APK Signature Scheme v2
-- Native ABIs: `arm64-v8a`, `armeabi-v7a`, `x86_64`
+- Native ABI: `arm64-v8a`
 
-The APK was pulled read-only from the qualified CJ-1 and matched byte-for-byte
-to the retained artifact in the clean exact-source worktree. It is debug-signed
-and debuggable. No production signing or trust-chain claim is made. Historical
-Build 69 uses the same package ID and signer, so Android permits an in-place
-`adb install -r` upgrade from that public build.
+This exact APK was built from the source above and installed in-place on a CJ-1.
+The installed APK hash matches the published artifact. The upgrade preserved
+node identity, credentials, settings, and retained delivery state. Receiver
+scanning resumed and the preloaded notification reported ready; 26 focused
+Android tests passed. A fresh over-the-air listening check was not completed
+before publication. This notification change does not claim to fix missing
+receive audio on short or silent hits.
+
+It remains debug-signed and debuggable for controlled Beta testing. No production
+signing or trust-chain claim is made. Public Builds 115 and 69 use the same
+package ID and signer, permitting an in-place `adb install -r` upgrade.

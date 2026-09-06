@@ -2,27 +2,31 @@
 
 ## Download and verify
 
-Download `Apollo-CJ1-1.0.12-beta1-build115.apk` from the
-[Build 115 prerelease](https://github.com/gdowkpc/apollo-public-release/releases/tag/cj1-v1.0.12-beta1-build115).
+Download `Apollo-CJ1-1.0.12-beta1-build116.apk` from the
+[Build 116 prerelease](https://github.com/gdowkpc/apollo-public-release/releases/tag/cj1-v1.0.12-beta1-build116).
 
 On Windows:
 
 ```bat
-certutil -hashfile Apollo-CJ1-1.0.12-beta1-build115.apk SHA256
+certutil -hashfile Apollo-CJ1-1.0.12-beta1-build116.apk SHA256
 ```
 
 On Linux or macOS:
 
 ```sh
-sha256sum Apollo-CJ1-1.0.12-beta1-build115.apk
+sha256sum Apollo-CJ1-1.0.12-beta1-build116.apk
 ```
 
 The result must be
-`6099e8212b92482fd505911c2627fa288a9940b52fd8296009b9918e9a4db59d`.
+`05ec5d417e52d17b1dd6f0c458ca2ebacc58cba26c82e7257f27de6a00f72e6c`.
 
-This is package `org.gdowkpc.apollo_node_shell`, version code `115`. It is
+This is package `org.gdowkpc.apollo_node_shell`, version code `116`. It is
 debug-signed and debuggable; it is a controlled Beta APK, not a production-
 signed Play Store artifact.
+
+Build 116 supports ARM64 CJ-1 hardware and replaces the hit beep with a subtle,
+220 ms warm two-note notification. The **Hit beep** setting still controls it.
+Receive-audio and evidence behavior are unchanged.
 
 ## Install or upgrade
 
@@ -31,11 +35,13 @@ confirm the intended device:
 
 ```sh
 adb devices
-adb install -r Apollo-CJ1-1.0.12-beta1-build115.apk
+adb install -r Apollo-CJ1-1.0.12-beta1-build116.apk
 ```
 
-The historical public Build 69 has the same package ID and signer, so `-r`
-preserves app data during that upgrade. If Android reports a signature mismatch
+Build 115 and the historical public Build 69 have the same package ID and signer.
+The in-place upgrade from Build 115 was verified to preserve node identity,
+credentials, settings, and retained delivery state. Use `-r` to preserve app data.
+If Android reports a signature mismatch
 from some other build, stop; uninstalling would erase the node's app data and
 identity.
 

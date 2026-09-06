@@ -100,11 +100,11 @@ or development checkout.
 Stop and preserve state at the first bootstrap error. Do not manually repair
 service, policy, allowlist, identity, custody, or rollback files.
 
-## CJ-1 — Build 115
+## CJ-1 — Build 116
 
 - [ ] Follow the [CJ-1 owner guide](cj1-beta1.md).
 - [ ] Verify APK size/hash, then use `adb install -r`.
-- [ ] Confirm package `org.gdowkpc.apollo_node_shell`, version code 115, and app
+- [ ] Confirm package `org.gdowkpc.apollo_node_shell`, version code 116, and app
       label **Apollo Listening**.
 - [ ] Grant the requested Android permissions.
 - [ ] Sign in through **RepeaterBook node sign-in**; confirm a local node ID and
