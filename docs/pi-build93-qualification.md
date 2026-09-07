@@ -1,53 +1,70 @@
-# Apollo Pi Build 93 / Bootstrap R3 — Qualification Candidate
+# Set up Apollo on a Raspberry Pi
 
-Build 93 / Bootstrap R3 is undergoing final clean-Pi qualification before the Apollo Beta is opened to testers. It is not promoted to the current/stable Beta. The existing Build 92 / Bootstrap R2 stable path remains unchanged.
+**Build 93 · Bootstrap R3 — test release.** Final hardware testing is still in progress.
 
-Start at [Apollo Downloads](https://www.repeaterbook.com/apollo/downloads/). Choose **Apollo for Raspberry Pi**, **Version 1.0.0 / Build 93**, **Qualification Candidate**, **Node Agent 51 · Bootstrap R3**.
+You'll need a Raspberry Pi 5, a fresh microSD card, power supply, an RTL2832U USB receiver and antenna, and a computer on the same network. This guide uses your computer to set up the Pi; a monitor and keyboard for the Pi are optional.
 
-## Supported clean installation
+## 1. Prepare the microSD card
 
-Use a genuinely clean Raspberry Pi 5 Model B, Raspberry Pi OS 64-bit Debian 13 (trixie), and RTL2832U USB ID `0bda:2838`. Create the owner account named `pi`, enable SSH during OS setup for headless access, and allow at least 2 GiB free storage. Existing Apollo installations or state cause the installer to stop; do not erase a configured node to satisfy this guide.
+Install [Raspberry Pi Imager](https://www.raspberrypi.com/software/) on your computer and insert the new card.
 
-The clean-install action is **Bootstrap R3**. The Build 93 managed-update ZIP and separate node-agent payload are supporting artifacts, not standalone clean installers.
+In Imager:
 
-In the Pi's terminal or SSH session, download and verify the exact installer before running it:
+- Choose **Raspberry Pi 5** and **Raspberry Pi OS (64-bit)**, based on Debian 13 (Trixie).
+- Select your new microSD card. Writing the image erases that card.
+- Set the hostname to **apollo-pi** and username to **pi**. Choose a password for the Pi.
+- Enter your Wi-Fi details, or plan to connect an Ethernet cable.
+- Enable **SSH** with password authentication.
+- Write the image and wait for verification to finish.
 
-```bash
-curl --fail --location --proto '=https' --tlsv1.2 'https://github.com/gdowkpc/apollo-public-release/releases/download/pi-bootstrap-v1.0.0-beta1-r3/apollo-pi-bootstrap-beta1-r3.sh' --output apollo-pi-bootstrap-beta1-r3.sh
-echo 'ad57330df225a4b93dc82489ccc51b5fd84039a4472611954738671e3afdf598  apollo-pi-bootstrap-beta1-r3.sh' | sha256sum --check --strict
-sudo bash ./apollo-pi-bootstrap-beta1-r3.sh
+## 2. Start the Pi
+
+With the Pi powered off, insert the prepared card. Connect the receiver, antenna and Ethernet cable if using one, then turn on the power. Allow a few minutes for the first boot.
+
+On your computer, open **Terminal** (Windows Terminal on Windows) and run:
+
+```text
+ssh pi@apollo-pi.local
 ```
 
-The installer downloads and verifies the exact bound Build 93 package and R3 payload, installs dependencies and protected services, then prints the hostname and owner-UI access instructions. No RepeaterBook password or receiver coordinates are entered in the terminal.
+Accept the connection prompt and enter the Pi password you chose in Imager. Nothing appears while you type the password; that is normal.
 
-## Open and configure Apollo
+## 3. Install Apollo
 
-On the Pi, browse to `http://127.0.0.1:17882/`. For a headless Pi, run the installer-provided command on your computer, substituting its printed hostname:
+On [Apollo Downloads](https://www.repeaterbook.com/apollo/downloads/), the Raspberry Pi installer is **Bootstrap R3**. Copy this whole block into your connected Pi terminal to download, verify and run it:
+
+```bash
+base=https://github.com/gdowkpc/apollo-public-release/releases/download
+curl --fail --location --proto '=https' --tlsv1.2 \
+  "$base/pi-bootstrap-v1.0.0-beta1-r3/apollo-pi-bootstrap-beta1-r3.sh" \
+  --output apollo.sh &&
+printf '%s  %s\n' \
+  ad57330df225a4b93dc82489ccc51b5fd84039a4472611954738671e3afdf598 \
+  apollo.sh | sha256sum --check --strict &&
+sudo bash ./apollo.sh
+```
+
+Enter your **Pi password** if asked. Wait for the installer to finish and show the instructions for opening Apollo.
+
+## 4. Open Apollo
+
+Open a **second terminal on your computer**. Copy and run the SSH command printed by the installer. It looks like this, with your Pi's hostname in place of `PRINTED-HOSTNAME`:
 
 ```text
 ssh -N -T -L 17882:127.0.0.1:17882 pi@PRINTED-HOSTNAME.local
 ```
 
-Keep that tunnel open and browse to `http://127.0.0.1:17882/` on the computer. If that local port is already occupied, close the conflicting local application or use the Pi's local browser. The Apollo HTTP service remains loopback-only. No router forwarding or LAN listener is needed.
+Enter your Pi password and leave that terminal open. It may appear idle; it is keeping the connection open.
 
-1. **Connect to RepeaterBook**: enter Username and Password and choose **Sign in and connect this node**. The protected node-agent receives one permanent device credential. The password is not saved and the browser does not receive the durable bearer.
-2. **Receiver Location**: use the OpenStreetMap map, draggable marker, or manual latitude/longitude, then **Confirm Location**. **Use My Location** describes the computer running the browser; verify the actual Pi receiver location when using a tunnel.
-3. **SDR Scan Plan**: select supported bands/ranges, gain policy, and reference policy. No RepeaterBook target list is required. Matching remains server-side.
-4. Save the plan, then **Start Receiver** to open **Dashboard/Live**. A receiver fault remains in the configured dashboard.
+On the same computer, open [Apollo](http://127.0.0.1:17882/) in your browser. If using a browser directly on the Pi, open that address without the SSH command.
 
-Scanning can continue after the SSH tunnel closes. UUID, permanent credential, protected location, scan plan, and gain/reference settings are intended to persist through reboot. Physical confirmation for this release is pending.
+## 5. Connect and start receiving
 
-## Qualification boundary
+1. **Connect to RepeaterBook:** enter your RepeaterBook username and password, then select **Sign in and connect this node**.
+2. **Receiver Location:** place the map marker at the receiver's location and select **Confirm Location**. If you use **Use My Location**, check that it points to the Pi, not your computer.
+3. **SDR Scan Plan:** choose the bands or frequency ranges to scan and review the gain and reference settings.
+4. Save the plan and select **Start Receiver**. Apollo opens **Dashboard/Live**.
 
-Source/package checks and ARM64 compiled-owner UI checks have passed. A genuinely clean physical Pi must still prove receiver readiness, finite samples, applicable NOAA/reference qualification, advancing SDR sweeps, genuine production RF observation HTTP 202, required audio HTTP 201 and correct association, Evidence Review receipt without duplicates, queue zero, and normal reboot with unattended scanning/reporting and unchanged identity/configuration. This guide makes no physical qualification claim.
+Enter your RepeaterBook password only in Apollo's sign-in screen. Apollo stores the device connection securely; you do not need to copy any credentials.
 
-## Exact immutable artifacts
-
-Source: `93f1f63360927b43fda2c2278c9275016363a385`. Qualified parent: `873555c1de4e46004196f54d989fb82431589a7c`. Runtime version/build: **1.0.0 / 93**, **Linux ARM64**. Node-agent **1.0.0 / 51**. Bootstrap **R3**.
-
-- [ApolloPassiveReceive-1.0.0-build.93-linux-arm64.zip](https://github.com/gdowkpc/apollo-public-release/releases/download/pi-v1.0.0-beta1-build93/ApolloPassiveReceive-1.0.0-build.93-linux-arm64.zip) — 17890630 bytes; SHA-256 `344b847406634c7723591108d1308e730d38537f06a28e7979a8e2712e2de6fc`.
-- [ApolloNodeAgent-1.0.0-build.51-linux-arm64.tar.gz](https://github.com/gdowkpc/apollo-public-release/releases/download/pi-v1.0.0-beta1-build93/ApolloNodeAgent-1.0.0-build.51-linux-arm64.tar.gz) — 10312 bytes; SHA-256 `3c122064461631e5a2064e4b732e75cb2086496f9679105a55428353d2d1a205`.
-- [apollo-pi-bootstrap-beta1-r3.sh](https://github.com/gdowkpc/apollo-public-release/releases/download/pi-bootstrap-v1.0.0-beta1-r3/apollo-pi-bootstrap-beta1-r3.sh) — 14871 bytes; SHA-256 `ad57330df225a4b93dc82489ccc51b5fd84039a4472611954738671e3afdf598`.
-- [apollo-pi-bootstrap-beta1-payload.tar.gz](https://github.com/gdowkpc/apollo-public-release/releases/download/pi-bootstrap-v1.0.0-beta1-r3/apollo-pi-bootstrap-beta1-payload.tar.gz) — 165921 bytes; SHA-256 `b4b3ee98406f82c3be172134079bac45ecf0a439dffebd47e406b69bf719f732`.
-
-Principal executable SHA-256: `50536cdfa342a5cb2308eb3b19bf217680ce2baa59e5527367a2413733211a8f`. Inner inventory SHA-256: `8aad9f1459e715f8fda2a9eb2fc89a0753d2f0b7a9d02b426fc03189679d842c`.
+[Release details and checksums](https://github.com/gdowkpc/apollo-public-release/releases/tag/pi-bootstrap-v1.0.0-beta1-r3)
