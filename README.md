@@ -23,6 +23,11 @@ upgrades to Apollo's normal managed-update path. Bootstrap R2 derives the clean
 node's first known-good rollback baseline from exact validated installation
 policy; it does not invent historical release custody.
 
+For Pi 4 Model B or Pi 5 Model B testing, use the separate
+[Build 93 / Bootstrap R4 qualification candidate guide](docs/pi-build93-qualification.md).
+It requires Raspberry Pi OS 64-bit Debian 13 (Trixie). Physical qualification
+remains pending; the stable Pi 5 Build 92 / R2 entry above is unchanged.
+
 ## Historical releases
 
 Apollo Windows RC2 Build 90 remains available at its
@@ -39,8 +44,9 @@ Apollo CJ-1 1.0.2 Build 69 remains available at its
 [historical release](https://github.com/gdowkpc/apollo-public-release/releases/tag/cj1-v1.0.2).
 It is not the qualified CJ-1 Beta 1 artifact.
 
-The original Pi clean-bootstrap prerelease remains available for history. New
-Pi installations must use Bootstrap R2 linked above.
+The original Pi clean-bootstrap prerelease remains available for history.
+Bootstrap R2 remains the qualified Pi 5 path; Bootstrap R4 is the Pi 4/Pi 5 test
+candidate linked above.
 
 ## Publication policy
 
