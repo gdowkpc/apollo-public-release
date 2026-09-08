@@ -104,3 +104,10 @@ receive audio on short or silent hits.
 It remains debug-signed and debuggable for controlled Beta testing. No production
 signing or trust-chain claim is made. Public Builds 115 and 69 use the same
 package ID and signer, permitting an in-place `adb install -r` upgrade.
+
+## Bootstrap R5 qualification candidate
+
+Bootstrap R5 corrects the R3/R4 initial-release timestamp defect while retaining
+the exact Build 93 and node-agent 51 artifacts. It is not a stable promotion.
+See the [R5 release record](../release-notes/pi-bootstrap-r5.md) for immutable
+artifact hashes and the pending physical qualification.

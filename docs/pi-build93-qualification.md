@@ -1,10 +1,12 @@
 # Set up Apollo on a Raspberry Pi
 
-**Build 93 · Bootstrap R4 — test release.** Pi 4 and Pi 5 hardware verification remains pending. R4 adds Pi 4 installation support; it uses the same Build 93 runtime and Node Agent 51 as R3.
+**Build 93 · Bootstrap R5 — test release.** Final hardware testing is still in progress. R5 fixes the installation error in R3 and R4; Build 93 and Node Agent 51 are unchanged.
 
 You'll need a Raspberry Pi 4 Model B or Raspberry Pi 5 Model B, a fresh microSD card, power supply, an RTL2832U USB receiver and antenna, and a computer on the same network. This guide uses your computer to set up the Pi; a monitor and keyboard for the Pi are optional.
 
 ## 1. Prepare the microSD card
+
+**If R3 or R4 stopped during installation:** keep that card intact for diagnosis and use a different freshly imaged card. Do not rerun the installer on the partially installed card.
 
 Install [Raspberry Pi Imager](https://www.raspberrypi.com/software/) on your computer and insert the new card.
 
@@ -31,15 +33,15 @@ Accept the connection prompt and enter the Pi password you chose in Imager. Noth
 
 ## 3. Install Apollo
 
-On [Apollo Downloads](https://www.repeaterbook.com/apollo/downloads/), the Raspberry Pi installer is **Bootstrap R4**. Copy this whole block into your connected Pi terminal to download, verify and run it:
+On [Apollo Downloads](https://www.repeaterbook.com/apollo/downloads/), the Raspberry Pi installer is **Bootstrap R5**. Copy this whole block into your connected Pi terminal to download, verify and run it:
 
 ```bash
 base=https://github.com/gdowkpc/apollo-public-release/releases/download
 curl --fail --location --proto '=https' --tlsv1.2 \
-  "$base/pi-bootstrap-v1.0.0-beta1-r4/apollo-pi-bootstrap-beta1-r4.sh" \
+  "$base/pi-bootstrap-v1.0.0-beta1-r5/apollo-pi-bootstrap-beta1-r5.sh" \
   --output apollo.sh &&
 printf '%s  %s\n' \
-  773ed9cd87472f90386ab1ed8500977f77aa1ef69d341bf8f6517ed5ba91e3a1 \
+  6d0f474d1c570fe7a52113ad1431aac56b5e0ee1de53cb5d67bd573848c97503 \
   apollo.sh | sha256sum --check --strict &&
 sudo bash ./apollo.sh
 ```
@@ -67,4 +69,4 @@ On the same computer, open [Apollo](http://127.0.0.1:17882/) in your browser. If
 
 Enter your RepeaterBook password only in Apollo's sign-in screen. Apollo stores the device connection securely; you do not need to copy any credentials.
 
-[Release details and checksums](https://github.com/gdowkpc/apollo-public-release/releases/tag/pi-bootstrap-v1.0.0-beta1-r4)
+[Release details and checksums](https://github.com/gdowkpc/apollo-public-release/releases/tag/pi-bootstrap-v1.0.0-beta1-r5)
