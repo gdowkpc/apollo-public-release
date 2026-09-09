@@ -1,8 +1,21 @@
 # Apollo public releases
 
 This repository is the public download and owner-documentation home for Apollo
-controlled Beta software. Large binaries are attached to GitHub Releases rather
+software. Large binaries are attached to GitHub Releases rather
 than committed to Git.
+
+## CJ-1 1.0 stable
+
+Apollo CJ-1 1.0 is the stable release of **Build 116**. Download
+`Apollo-CJ1-1.0-build116.apk` from the
+[1.0 release](https://github.com/gdowkpc/apollo-public-release/releases/tag/cj1-v1.0.0-build116)
+and follow the [CJ-1 owner guide](docs/cj1.md) to verify and install it.
+
+The APK bytes are unchanged from the published Build 116. Its Android version
+remains `1.0.12-provider-evidence.3`, version code `116`; **1.0** is the public
+release designation. Further KA9Q-style CTCSS work is reserved for 1.1 and is
+not included in this promotion. See the [release notes](release-notes/cj1-v1.0.0-build116.md)
+for exact provenance and verification limits.
 
 ## Beta 1 candidates
 
@@ -10,10 +23,9 @@ than committed to Git.
 | --- | --- | --- | --- |
 | Windows x64 | Temporarily unavailable while the next Beta build is qualified | [Windows owner guide](docs/windows-beta1.md) | No current download |
 | Raspberry Pi 5 / Linux ARM64 | Apollo Passive Receive 1.0.0, Build 92 | [Clean-install Pi owner guide](docs/pi-beta1.md) | [Bootstrap R2](https://github.com/gdowkpc/apollo-public-release/releases/tag/pi-bootstrap-v1.0.0-beta1-r2) / [Build 92](https://github.com/gdowkpc/apollo-public-release/releases/tag/pi-v1.0.0-beta1-build92) |
-| CJ-1 | Apollo Listening 1.0.12-provider-evidence.3, Build 116 | [CJ-1 owner guide](docs/cj1-beta1.md) | [Download](https://github.com/gdowkpc/apollo-public-release/releases/tag/cj1-v1.0.12-beta1-build116) |
 
-Use the [frozen artifact manifest](docs/beta1-artifact-manifest.md) to verify
-every download. Garrett's end-to-end procedure is the
+For these Beta candidates, use the [frozen artifact manifest](docs/beta1-artifact-manifest.md).
+Garrett's end-to-end procedure is the
 [clean-install checklist](docs/beta1-clean-install-checklist.md).
 
 Pi Build 92 remains the unchanged qualified managed-update payload. The separate
@@ -37,7 +49,9 @@ the current Windows Beta.
 
 Apollo CJ-1 1.0.2 Build 69 remains available at its
 [historical release](https://github.com/gdowkpc/apollo-public-release/releases/tag/cj1-v1.0.2).
-It is not the qualified CJ-1 Beta 1 artifact.
+It is not the current CJ-1 release. The
+[Build 116 Beta publication](https://github.com/gdowkpc/apollo-public-release/releases/tag/cj1-v1.0.12-beta1-build116)
+and its [owner guide](docs/cj1-beta1.md) remain available for history.
 
 The original Pi clean-bootstrap prerelease remains available for history. New
 Pi installations must use Bootstrap R2 linked above.
