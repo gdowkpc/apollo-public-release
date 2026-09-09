@@ -1,0 +1,52 @@
+{
+  "schema_version": "apollo-hydra-pi-test-release-v1",
+  "version": "1.0.0",
+  "build": 95,
+  "node_agent_build": 51,
+  "bootstrap": "R6",
+  "release_channel": "test prerelease",
+  "source_commit": "c5e57cfd14aeffa920f08641d826ef64d7ad23cc",
+  "source_branch": "codex/pi-hydra-release",
+  "build_timestamp_utc": "2026-09-09T16:08:00.000Z",
+  "target": "Raspberry Pi 4/5; Raspberry Pi OS 64-bit Debian 13 Trixie; fresh SD card",
+  "artifacts": [
+    {
+      "filename": "ApolloPassiveReceive-1.0.0-build.95-linux-arm64.zip",
+      "byte_size": 18205573,
+      "sha256": "f5e1a0345b0cc9be698091cc66789155ab4b77c2e806782173a4c57331c592f5",
+      "url": "https://github.com/gdowkpc/apollo-public-release/releases/download/pi-v1.0.0-beta1-build95/ApolloPassiveReceive-1.0.0-build.95-linux-arm64.zip"
+    },
+    {
+      "filename": "apollo-pi-bootstrap-beta1-payload.tar.gz",
+      "byte_size": 166945,
+      "sha256": "8218b1e484b0947f052aebcd082de3c99ac2f8016daa2102be97f0c8ad734a74",
+      "url": "https://github.com/gdowkpc/apollo-public-release/releases/download/pi-bootstrap-v1.0.0-beta1-r6/apollo-pi-bootstrap-beta1-payload.tar.gz"
+    },
+    {
+      "filename": "apollo-pi-bootstrap-beta1-r6.sh",
+      "byte_size": 15254,
+      "sha256": "d0eef630329da8fa33325b4d787c3ad70dcd4704b878620353bbec982fef94ef",
+      "url": "https://github.com/gdowkpc/apollo-public-release/releases/download/pi-bootstrap-v1.0.0-beta1-r6/apollo-pi-bootstrap-beta1-r6.sh"
+    }
+  ],
+  "validation": {
+    "source_suite": {
+      "passed": 779,
+      "skipped": 11,
+      "failed": 0,
+      "excluded": "Four legacy signing/publisher suites excluded under Apollo signing prohibition."
+    },
+    "final_arm64_application": "PASS under Debian 13 ARM64 emulation: executable identity, startup, version, setup and Hydra UI",
+    "native_hydra_runtime": "PASS compilation, inventory hashes, packaged-library resolution and helper startup; emulation has no USB backend",
+    "bootstrap": "PASS all 23 payload file sizes/hashes/modes, shell syntax, exact manual allowlist, canonical manifest and actual ZIP identity",
+    "local_reporting": "PASS generated IQ through actual DSP, observation queue, Node Agent handlers and local intake acknowledgment; conditional audio gates preserved",
+    "physical_pi_hydra_rf": "PENDING owner test",
+    "organic_production_reporting_matching_review": "PENDING owner test"
+  },
+  "stable_update_promotion": false,
+  "limitations": [
+    "This release includes Hydra and RTL native runtimes. Airspy and SDRplay native runtimes are not included.",
+    "No physical Hydra reception, clean-card installation or production Review qualification was performed.",
+    "Normal enrollment, node authorization and evidence policy remain required."
+  ]
+}
