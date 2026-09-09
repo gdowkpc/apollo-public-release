@@ -1,4 +1,4 @@
-# Apollo Pi Build 96 clean-install candidate
+# Apollo Pi Build 96 clean-install release
 
 Bootstrap R5 Build 96 supports Raspberry Pi 3 Model B, Raspberry Pi 4 Model B, and Raspberry Pi 5 Model B only when running the 64-bit Raspberry Pi OS Debian 13 (Trixie) image. A Pi 3B+, Pi 400, Compute Module, 32-bit image, Bookworm image, or existing Apollo installation is not supported by this clean installer.
 
@@ -8,4 +8,4 @@ Download the R5 Build 96 installer from Apollo Downloads, verify its SHA-256, an
 
 In the owner UI: connect to RepeaterBook with username and password, confirm Receiver Location, save the SDR Scan Plan, then choose Start Receiver. If sign-in fails, the UI now says: â€œRepeaterBook did not accept the username or password. Check them and try again.â€ No password is stored by the installer or UI.
 
-This is a clean-install candidate. Physical clean-Pi qualification remains pending. Existing R2/R3/R4 releases and their rollback paths are retained.
+This is a public clean-install release. Physical clean-Pi qualification remains pending. Existing R2/R3/R4 releases and their rollback paths are retained.
