@@ -18,6 +18,28 @@ The SERA 440 MHz table lists outputs 440.5125–440.7250, 441.8000–444.9750, a
 
 SERA coordination territory cannot be accurately expressed as a simple rectangle, so this profile intentionally has no geographic recommendation bounds.
 
+## `de-darc`
+
+The [DARC 2m plan, August 2017](https://www.darc.de/fileadmin/filemounts/referate/vus/bandplaene/VHF_Bandplan_2_m_August_2017.pdf) gives 145.575–145.7875 MHz FM/DV repeater outputs. The current-linked document retains its 2017 date; it was reviewed in September 2026.
+
+Page 2 of the [DARC 70cm plan, May 2025](https://www.darc.de/fileadmin/filemounts/referate/vus/bandplaene/UHF_Bandplan_70_cm_Mai_2025.pdf) separates NBFM outputs (438.550–439.4375 MHz), digital-voice outputs (439.450–439.5875 MHz), and digital/packet duplex outputs. For the latter, footnotes 4 and 6 specify 25 kHz channel centres: the profile uses 438.300–438.525 MHz after excluding the explicitly marked legacy simplex span through 438.275 MHz, and 439.825–439.975 MHz. It preserves the gaps and excludes simplex gateways, repeater inputs, paging and broadband experiments. DARC permits regional FM/DV sharing in some blocks. Including digital RF coverage does not add digital decoding to Apollo.
+
+## `fr-ref`
+
+The REF Commission THF [144 MHz](https://thf.r-e-f.org/plans_des_bandes/144.htm) and [430–440 MHz](https://thf.r-e-f.org/plans_des_bandes/432.htm) tables give 145.575–145.7935 MHz repeater-output allocation and 430.025–430.375 MHz French NBFM output coverage. Their published update date is November 28, 2017; no superseding national output-direction table was found during the September 2026 review. The 430.400–430.575 MHz digital-link/French repeater-input block is excluded, as are output blocks labelled for other countries.
+
+## `at-oevsv`
+
+The official ÖVSV [2m](https://www.oevsv.at/funkbetrieb/ukw-referat/plan/Bandplan-2m/) and [70cm](https://www.oevsv.at/funkbetrieb/ukw-referat/plan/Bandplan-70cm/) pages, retrieved September 2026, explicitly list outputs at 145.575–145.7875 and 437.975–439.0875 MHz. The latter published envelope overlaps the separately listed 438.025 MHz OE Dapnet/POCSAG channel. The profile retains the national output envelope and documents that coexistence; it does not claim every signal within it is a repeater.
+
+## `it-mimit`
+
+The [Italian ministry circular of May 16, 2022](https://www.mimit.gov.it/images/stories/normativa/Circolare_16_05_2022_ripetitori_radioamatoriali.pdf), pages 10–11, explicitly labels output/downlink and input/uplink columns. The profile uses the first-to-last output channel centres: 145.575–145.7875 MHz, 430.025–430.3875 MHz, and 431.225–431.600 MHz. It adds no padding beyond those channels and preserves the UHF gap.
+
+The [ARI bandplan webpage](https://www.ari.it/bandplan.html) reverses the direction labels for the second UHF pair. The ministry's explicit channel table controls this profile: 431.225–431.600 MHz is output; 432.825–433.200 MHz is input. The source was reviewed in September 2026.
+
+All four added profiles are operator-selectable and intentionally omit rectangular recommendation bounds, which would overlap neighbouring countries. They cover the sourced 2m and 70cm output ranges; unsupported bands are omitted. Existing UK and SERA profile definitions are unchanged.
+
 ## Downloading and updates
 
 Apollo Build 122 and later checks `manifest.json` for availability. Profile data downloads only after the operator explicitly chooses Download. Selecting bands and applying a profile fills the normal editable custom scan configuration; saving remains a separate operator action. The packages contain no geographic profile dataset.
