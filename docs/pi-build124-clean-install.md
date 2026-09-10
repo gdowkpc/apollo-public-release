@@ -16,7 +16,7 @@ Download [Bootstrap R7 Build 124](https://github.com/gdowkpc/apollo-public-relea
 
 Verify the script's SHA-256 before running it:
 
-`694271e599a4b6a92a25473e4e84d7e8c074df58a59b389eecce6886b60e1e71`
+`e07d7fce579e50be041cc4624614d135fcc31b918fd5040d6a763c9fdc208871`
 
 Run the verified script with `sudo bash ./apollo-pi-bootstrap-beta1-r7.sh` from an interactive SSH terminal. It verifies the protected payload and exact Build 124 runtime before installation. Keep the installer-provided SSH tunnel open to use the loopback owner interface.
 
@@ -33,8 +33,8 @@ The separate receiver-test ARM64 ZIP is not a clean installer and does not inclu
 ## Release identity and qualification
 
 - Runtime: `ApolloPassiveReceive-1.0.0-build.124-linux-arm64.zip`
-- Runtime SHA-256: `a49827b6eb02dc60ea98da3b168baac65438c57004984738a665e162afdfc2f1`
-- Source commit: `22e6587a2f70a9471c8d6b7306c87e614cc90c01`
+- Runtime SHA-256: `6144af3aa0cb8c7b98d09daee1cea801f0f8bf64e0803f1d932534fc3439b07d`
+- Source commit: `051180b4995c4f3df8dd91a2fcd172d758a6047e`
 - Physical clean-Pi installation, receiver and reporting qualification remain pending. Local package and emulated ARM64 checks do not establish physical qualification.
 
 Previous immutable installers remain available for recovery on a separate clean SD card. Retain the original card and node data; do not run a clean bootstrap over an existing installation.
