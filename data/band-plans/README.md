@@ -40,6 +40,32 @@ The [ARI bandplan webpage](https://www.ari.it/bandplan.html) reverses the direct
 
 All four added profiles are operator-selectable and intentionally omit rectangular recommendation bounds, which would overlap neighbouring countries. They cover the sourced 2m and 70cm output ranges; unsupported bands are omitted. Existing UK and SERA profile definitions are unchanged.
 
+## `au-wia`
+
+[WIA Australian Amateur Radio Band Plan - Feb 2026](https://www.wia.org.au/members/bandplans/data/documents/WIA%20Australian%20Band%20Plan%202026.pdf); [ACMA RALI AA3: Amateur (assigned) repeater station (146 MHz band), final release v5.0, 23 October 2024](https://www.acma.gov.au/sites/default/files/2024-10/rali_aa3_amateur_assigned_repeater_station_146_mhz_frequency_assignment_requirements.pdf); [ACMA RALI AA4: Amateur (assigned) repeater station (438 MHz band), final release v5.0, 23 October 2024](https://www.acma.gov.au/sites/default/files/2024-10/rali_aa4_amateur_assigned_repeater_station_438_mhz_frequency_assignment_requirements.pdf).
+
+2 metres: 144.8875–145.0625 MHz, 146.6125–147.3875 MHz. 70 centimetres: 438–438.9375 MHz, 439.6125–440 MHz.
+
+Broad RF coverage for national repeater-output scanning. WIA Feb 2026 allocation boundaries are used; ACMA AA3/AA4 Oct 2024 channel plans corroborate assigned transmit populations. Inputs, links, simplex, satellite, and low-power hotspot-only allocations are excluded. 2m Block C is digital-only/data and 147.0125-147.3875 includes D/E special-use sharing; 70cm Block B 439.7900-440.0000 permits either -7 or -5 MHz offset. No targets, tones, credentials, or digital decoding are implied.
+
+## `ar-enacom`
+
+[ENACOM Resolución E 3635/2017, Annex A frequency table, official government copy](https://www.argentina.gob.ar/normativa/nacional/resoluci%C3%B3n-3635-2017-286986/texto); [ENACOM Resolución 1186/2024, Resolución 3635/2017 - modificación](https://www.argentina.gob.ar/normativa/nacional/resoluci%C3%B3n-1186-2024-406719/texto); [Radio Club Argentino, Reglamento General de Radioaficionados, compiled August 2025](https://www.lu4aa.org/wp/wp-content/uploads/2025/08/Reglamento-General-de-Radioaficionados-pagina-completa-10puntos-b.pdf).
+
+2 metres: 145.2–145.5 MHz, 146.6–147.4 MHz. 70 centimetres: 433–435 MHz.
+
+Repeater-output RF coverage using ENACOM Annex A allocation boundaries (Resolution 3635/2017), cross-checked against RCA's August 2025 copy and reviewed September 2026. The two 2m output blocks and the 433-435 MHz output block share spectrum with simplex; not every signal within them is a repeater. The national table's repeater-input and satellite blocks are excluded. Digital/mixed-mode RF coverage does not add digital decoding. No individual repeater data is included.
+
+## `be-uba`
+
+[UBA current bandplan references, retrieved September 2026](https://www.uba.be/nl/v-u-shf/bandplan); [IARU Region 1 VHF Bandplan, December 2020, linked by UBA](https://www.iaru-r1.org/wp-content/uploads/2020/12/VHF-Bandplan.pdf); [IARU Region 1 UHF Bandplan, effective December 2020, linked by UBA](https://www.iaru-r1.org/wp-content/uploads/2021/03/UHF-Bandplan.pdf); [UBA Belgian unmanned-station list, February 2023, TX-frequency tables pages 3-7](https://www.uba.be/sites/default/files/media/files/Unmanned%20stations%20ON%2020230205.pdf).
+
+2 metres: 145.575–145.7935 MHz. 70 centimetres: 430.025–430.375 MHz, 438.2–438.525 MHz, 438.65–439.5875 MHz.
+
+Repeater-output RF coverage from UBA-linked bandplans, corroborated by UBA's Belgian TX-frequency list. The high UHF envelope extends to 439.5875 MHz to cover documented Belgian duplex outputs beyond the regional table's 439.425 MHz endpoint; this is a coverage envelope, not a newly inferred allocation. Digital/mixed-mode outputs are included without adding digital decoding. Input, satellite, simplex/link and paging blocks are excluded. Sources reviewed September 2026; currently linked plans/list date from 2020/2023.
+
+The Australia, Argentina and Belgium additions have no geographic recommendation rectangles. Operators select and apply the profile explicitly; existing profile definitions remain unchanged.
+
 ## Downloading and updates
 
 Apollo Build 122 and later checks `manifest.json` for availability. Profile data downloads only after the operator explicitly chooses Download. Selecting bands and applying a profile fills the normal editable custom scan configuration; saving remains a separate operator action. The packages contain no geographic profile dataset.
