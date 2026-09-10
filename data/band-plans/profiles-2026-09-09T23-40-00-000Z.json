@@ -1,0 +1,104 @@
+{
+  "published_at": "2026-09-09T23:40:00Z",
+  "profiles": [
+    {
+      "id": "gb-rsgb",
+      "country": "GB",
+      "name": "United Kingdom repeater-output coverage (RSGB)",
+      "recommendation_bounds": {
+        "south": 49,
+        "north": 61.1,
+        "west": -8.8,
+        "east": 2.1
+      },
+      "sources": [
+        {
+          "title": "RSGB Band Plan January 2026",
+          "url": "https://rsgb.services/public/bandplans/docs/260125_rsgb_band_plan_2026.pdf"
+        },
+        {
+          "title": "RSGB 144MHz Band Plan",
+          "url": "https://rsgb.org/main/operating/band-plans/vhf-uhf/144mhz-band/"
+        }
+      ],
+      "notes": "Broad RF coverage for repeater-output scanning; no repeater targets, directory data, or access parameters. The 2m allocation is RV48-RV63. The 70cm ranges are RSGB repeater-output allocations. Recommendation bounds only suggest this profile and never apply it automatically.",
+      "bands": [
+        {
+          "id": "amateur_2m",
+          "label": "2 metres",
+          "segments": [
+            {
+              "start_hz": 145593500,
+              "end_hz": 145793500
+            }
+          ]
+        },
+        {
+          "id": "amateur_70cm",
+          "label": "70 centimetres",
+          "segments": [
+            {
+              "start_hz": 430812500,
+              "end_hz": 430975000
+            },
+            {
+              "start_hz": 432994000,
+              "end_hz": 433381000
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "us-sera",
+      "country": "US",
+      "region": "Southeastern Repeater Association coordination territory",
+      "name": "Southeastern US repeater-output coverage (SERA)",
+      "sources": [
+        {
+          "title": "SERA Coordination Policy and Guidelines, revision June 9 2024",
+          "url": "https://sera.org/wp-content/uploads/2024/07/SERA-CPG-Rev-06-09-2024.pdf"
+        }
+      ],
+      "notes": "Broad RF coverage for repeater-output scanning. SERA NBD allocations include 2.5 kHz analogue and mixed-mode use. Overlapping SERA output allocations are represented as their RF coverage union. This profile is selectable by the operator; it has no recommendation bounds because the SERA territory is not accurately represented by a simple rectangle.",
+      "bands": [
+        {
+          "id": "amateur_2m",
+          "label": "2 metres",
+          "segments": [
+            {
+              "start_hz": 144920000,
+              "end_hz": 144980000
+            },
+            {
+              "start_hz": 145020000,
+              "end_hz": 145080000
+            },
+            {
+              "start_hz": 145110000,
+              "end_hz": 145460000
+            },
+            {
+              "start_hz": 146610000,
+              "end_hz": 147390000
+            }
+          ]
+        },
+        {
+          "id": "amateur_70cm",
+          "label": "70 centimetres",
+          "segments": [
+            {
+              "start_hz": 440512500,
+              "end_hz": 440725000
+            },
+            {
+              "start_hz": 441800000,
+              "end_hz": 444987500
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
