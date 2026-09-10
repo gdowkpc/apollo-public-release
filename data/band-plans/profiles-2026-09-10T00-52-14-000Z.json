@@ -1,0 +1,268 @@
+{
+  "published_at": "2026-09-10T00:52:14Z",
+  "profiles": [
+    {
+      "id": "gb-rsgb",
+      "country": "GB",
+      "name": "United Kingdom repeater-output coverage (RSGB)",
+      "recommendation_bounds": {
+        "south": 49,
+        "north": 61.1,
+        "west": -8.8,
+        "east": 2.1
+      },
+      "sources": [
+        {
+          "title": "RSGB Band Plan January 2026",
+          "url": "https://rsgb.services/public/bandplans/docs/260125_rsgb_band_plan_2026.pdf"
+        },
+        {
+          "title": "RSGB 144MHz Band Plan",
+          "url": "https://rsgb.org/main/operating/band-plans/vhf-uhf/144mhz-band/"
+        }
+      ],
+      "notes": "Broad RF coverage for repeater-output scanning; no repeater targets, directory data, or access parameters. The 2m allocation is RV48-RV63. The 70cm ranges are RSGB repeater-output allocations. Recommendation bounds only suggest this profile and never apply it automatically.",
+      "bands": [
+        {
+          "id": "amateur_2m",
+          "label": "2 metres",
+          "segments": [
+            {
+              "start_hz": 145593500,
+              "end_hz": 145793500
+            }
+          ]
+        },
+        {
+          "id": "amateur_70cm",
+          "label": "70 centimetres",
+          "segments": [
+            {
+              "start_hz": 430812500,
+              "end_hz": 430975000
+            },
+            {
+              "start_hz": 432994000,
+              "end_hz": 433381000
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "us-sera",
+      "country": "US",
+      "region": "Southeastern Repeater Association coordination territory",
+      "name": "Southeastern US repeater-output coverage (SERA)",
+      "sources": [
+        {
+          "title": "SERA Coordination Policy and Guidelines, revision June 9 2024",
+          "url": "https://sera.org/wp-content/uploads/2024/07/SERA-CPG-Rev-06-09-2024.pdf"
+        }
+      ],
+      "notes": "Broad RF coverage for repeater-output scanning. SERA NBD allocations include 2.5 kHz analogue and mixed-mode use. Overlapping SERA output allocations are represented as their RF coverage union. This profile is selectable by the operator; it has no recommendation bounds because the SERA territory is not accurately represented by a simple rectangle.",
+      "bands": [
+        {
+          "id": "amateur_2m",
+          "label": "2 metres",
+          "segments": [
+            {
+              "start_hz": 144920000,
+              "end_hz": 144980000
+            },
+            {
+              "start_hz": 145020000,
+              "end_hz": 145080000
+            },
+            {
+              "start_hz": 145110000,
+              "end_hz": 145460000
+            },
+            {
+              "start_hz": 146610000,
+              "end_hz": 147390000
+            }
+          ]
+        },
+        {
+          "id": "amateur_70cm",
+          "label": "70 centimetres",
+          "segments": [
+            {
+              "start_hz": 440512500,
+              "end_hz": 440725000
+            },
+            {
+              "start_hz": 441800000,
+              "end_hz": 444987500
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "de-darc",
+      "country": "DE",
+      "name": "Germany repeater-output coverage (DARC)",
+      "sources": [
+        {
+          "title": "DARC 2m Bandplan, August 2017",
+          "url": "https://www.darc.de/fileadmin/filemounts/referate/vus/bandplaene/VHF_Bandplan_2_m_August_2017.pdf"
+        },
+        {
+          "title": "DARC 70cm automatic-station Bandplan, May 2025, page 2",
+          "url": "https://www.darc.de/fileadmin/filemounts/referate/vus/bandplaene/UHF_Bandplan_70_cm_Mai_2025.pdf"
+        }
+      ],
+      "notes": "Repeater-output RF coverage, including FM and digital/packet allocations; this does not add digital decoding. The 70cm digital/packet channel envelopes follow DARC footnotes 4 and 6. Legacy simplex 438.200-438.275 MHz is excluded. Other simplex, input, paging and broadband-experiment allocations are excluded. National sources reviewed September 2026; the currently linked 2m plan is dated 2017.",
+      "bands": [
+        {
+          "id": "amateur_2m",
+          "label": "2 metres",
+          "segments": [
+            {
+              "start_hz": 145575000,
+              "end_hz": 145787500
+            }
+          ]
+        },
+        {
+          "id": "amateur_70cm",
+          "label": "70 centimetres",
+          "segments": [
+            {
+              "start_hz": 438300000,
+              "end_hz": 438525000
+            },
+            {
+              "start_hz": 438550000,
+              "end_hz": 439437500
+            },
+            {
+              "start_hz": 439450000,
+              "end_hz": 439587500
+            },
+            {
+              "start_hz": 439825000,
+              "end_hz": 439975000
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fr-ref",
+      "country": "FR",
+      "name": "France repeater-output coverage (REF)",
+      "sources": [
+        {
+          "title": "REF Commission THF 144-146 MHz Bandplan, November 2017",
+          "url": "https://thf.r-e-f.org/plans_des_bandes/144.htm"
+        },
+        {
+          "title": "REF Commission THF 430-440 MHz Bandplan, November 2017",
+          "url": "https://thf.r-e-f.org/plans_des_bandes/432.htm"
+        }
+      ],
+      "notes": "Repeater-output RF coverage from REF's national tables, reviewed September 2026; the tables are dated 2017. The 2m range retains the published allocation boundary. The 70cm range is the French NBFM output block. The 430.400-430.575 MHz digital-link/French repeater-input block and outputs labelled for other countries are excluded.",
+      "bands": [
+        {
+          "id": "amateur_2m",
+          "label": "2 metres",
+          "segments": [
+            {
+              "start_hz": 145575000,
+              "end_hz": 145793500
+            }
+          ]
+        },
+        {
+          "id": "amateur_70cm",
+          "label": "70 centimetres",
+          "segments": [
+            {
+              "start_hz": 430025000,
+              "end_hz": 430375000
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "at-oevsv",
+      "country": "AT",
+      "name": "Austria repeater-output coverage (ÖVSV)",
+      "sources": [
+        {
+          "title": "ÖVSV UKW-Referat 2m Bandplan, retrieved September 2026",
+          "url": "https://www.oevsv.at/funkbetrieb/ukw-referat/plan/Bandplan-2m/"
+        },
+        {
+          "title": "ÖVSV UKW-Referat 70cm Bandplan, retrieved September 2026",
+          "url": "https://www.oevsv.at/funkbetrieb/ukw-referat/plan/Bandplan-70cm/"
+        }
+      ],
+      "notes": "Repeater-output RF coverage from ÖVSV's national tables. The published 70cm relay-output envelope overlaps the listed 438.025 MHz OE Dapnet/POCSAG channel; inclusion does not identify every signal in that envelope as a repeater. Input, simplex and satellite allocations outside the output envelope are excluded.",
+      "bands": [
+        {
+          "id": "amateur_2m",
+          "label": "2 metres",
+          "segments": [
+            {
+              "start_hz": 145575000,
+              "end_hz": 145787500
+            }
+          ]
+        },
+        {
+          "id": "amateur_70cm",
+          "label": "70 centimetres",
+          "segments": [
+            {
+              "start_hz": 437975000,
+              "end_hz": 439087500
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "it-mimit",
+      "country": "IT",
+      "name": "Italy repeater-output coverage (MIMIT)",
+      "sources": [
+        {
+          "title": "MIMIT repeater circular, 16 May 2022, output-channel tables pages 10-11",
+          "url": "https://www.mimit.gov.it/images/stories/normativa/Circolare_16_05_2022_ripetitori_radioamatoriali.pdf"
+        }
+      ],
+      "notes": "Repeater-output channel envelopes from MIMIT's explicit Uscita/Downlink tables, reviewed September 2026. These are first-to-last output channel centres, without added edge padding. MIMIT identifies 431.225-431.600 MHz as output and 432.825-433.200 MHz as input; an ARI webpage reverses those labels, so this profile follows the ministry table. Inputs and satellite allocations are excluded.",
+      "bands": [
+        {
+          "id": "amateur_2m",
+          "label": "2 metres",
+          "segments": [
+            {
+              "start_hz": 145575000,
+              "end_hz": 145787500
+            }
+          ]
+        },
+        {
+          "id": "amateur_70cm",
+          "label": "70 centimetres",
+          "segments": [
+            {
+              "start_hz": 430025000,
+              "end_hz": 430387500
+            },
+            {
+              "start_hz": 431225000,
+              "end_hz": 431600000
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
