@@ -1,0 +1,733 @@
+{
+  "published_at": "2026-09-10T18:15:00Z",
+  "profiles": [
+    {
+      "id": "gb-rsgb",
+      "country": "GB",
+      "name": "United Kingdom repeater-output coverage (RSGB)",
+      "recommendation_bounds": {
+        "south": 49,
+        "north": 61.1,
+        "west": -8.8,
+        "east": 2.1
+      },
+      "sources": [
+        {
+          "title": "RSGB Band Plan January 2026",
+          "url": "https://rsgb.services/public/bandplans/docs/260125_rsgb_band_plan_2026.pdf"
+        },
+        {
+          "title": "RSGB 144MHz Band Plan",
+          "url": "https://rsgb.org/main/operating/band-plans/vhf-uhf/144mhz-band/"
+        }
+      ],
+      "notes": "Broad RF coverage for repeater-output scanning; no repeater targets, directory data, or access parameters. The 2m allocation is RV48-RV63. The 70cm ranges are RSGB repeater-output allocations. Recommendation bounds only suggest this profile and never apply it automatically.",
+      "bands": [
+        {
+          "id": "amateur_2m",
+          "label": "2 metres",
+          "segments": [
+            {
+              "start_hz": 145593500,
+              "end_hz": 145793500
+            }
+          ]
+        },
+        {
+          "id": "amateur_70cm",
+          "label": "70 centimetres",
+          "segments": [
+            {
+              "start_hz": 430812500,
+              "end_hz": 430975000
+            },
+            {
+              "start_hz": 432994000,
+              "end_hz": 433381000
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "us-sera",
+      "country": "US",
+      "region": "Southeastern Repeater Association coordination territory",
+      "name": "Southeastern US repeater-output coverage (SERA)",
+      "sources": [
+        {
+          "title": "SERA Coordination Policy and Guidelines, revision June 9 2024",
+          "url": "https://sera.org/wp-content/uploads/2024/07/SERA-CPG-Rev-06-09-2024.pdf"
+        }
+      ],
+      "notes": "Broad RF coverage for repeater-output scanning. SERA NBD allocations include 2.5 kHz analogue and mixed-mode use. Overlapping SERA output allocations are represented as their RF coverage union. This profile is selectable by the operator; it has no recommendation bounds because the SERA territory is not accurately represented by a simple rectangle.",
+      "bands": [
+        {
+          "id": "amateur_2m",
+          "label": "2 metres",
+          "segments": [
+            {
+              "start_hz": 144920000,
+              "end_hz": 144980000
+            },
+            {
+              "start_hz": 145020000,
+              "end_hz": 145080000
+            },
+            {
+              "start_hz": 145110000,
+              "end_hz": 145460000
+            },
+            {
+              "start_hz": 146610000,
+              "end_hz": 147390000
+            }
+          ]
+        },
+        {
+          "id": "amateur_70cm",
+          "label": "70 centimetres",
+          "segments": [
+            {
+              "start_hz": 440512500,
+              "end_hz": 440725000
+            },
+            {
+              "start_hz": 441800000,
+              "end_hz": 444987500
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "us-arrl",
+      "country": "US",
+      "region": "National ARRL recommended plan",
+      "name": "United States repeater-output coverage (ARRL recommended)",
+      "sources": [
+        {
+          "title": "RepeaterBook Wiki: US Band Plans, ARRL section",
+          "url": "https://www.repeaterbook.com/wiki/doku.php?id=band_plans"
+        }
+      ],
+      "notes": "Broad RF coverage from the ARRL section of the RepeaterBook US Band Plans wiki. The profile preserves the stated 2m, 1.25m, and 33cm repeater-output ranges and their gaps. The wiki describes the 70cm local-option blocks as shared input/output allocations, so they are intentionally omitted rather than inferred as output coverage. This is an operator-selected reference profile; it does not identify a signal as a repeater or establish local coordination authority.",
+      "bands": [
+        {
+          "id": "amateur_10m",
+          "label": "10 metres",
+          "segments": [
+            {
+              "start_hz": 29610000,
+              "end_hz": 29700000
+            }
+          ]
+        },
+        {
+          "id": "amateur_2m",
+          "label": "2 metres",
+          "segments": [
+            {
+              "start_hz": 145200000,
+              "end_hz": 145500000
+            },
+            {
+              "start_hz": 146610000,
+              "end_hz": 146970000
+            },
+            {
+              "start_hz": 147000000,
+              "end_hz": 147390000
+            }
+          ]
+        },
+        {
+          "id": "amateur_1_25m",
+          "label": "1.25 metres",
+          "segments": [
+            {
+              "start_hz": 223850000,
+              "end_hz": 224980000
+            }
+          ]
+        },
+        {
+          "id": "amateur_33cm",
+          "label": "33 centimetres",
+          "segments": [
+            {
+              "start_hz": 927000000,
+              "end_hz": 927075000
+            },
+            {
+              "start_hz": 927125000,
+              "end_hz": 928000000
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "us-arca",
+      "country": "US",
+      "region": "Arizona Repeater Owners Frequency Coordination Committee territory",
+      "name": "Arizona repeater-output coverage (ARCA)",
+      "sources": [
+        {
+          "title": "RepeaterBook Wiki: US Band Plans, Arizona section",
+          "url": "https://www.repeaterbook.com/wiki/doku.php?id=band_plans"
+        },
+        {
+          "title": "Arizona Repeater Owners Frequency Coordination Committee band-plan page",
+          "url": "https://www.azfreqcoord.org/bp/bp.htm"
+        }
+      ],
+      "notes": "Broad 2m repeater-output RF coverage from the Arizona ranges reproduced in the RepeaterBook US Band Plans wiki. The discrete gaps between digital, portable/backyard, and voice-output allocations are preserved. The wiki does not provide a complete Arizona output allocation for the other bands, so they are omitted rather than inferred. This profile is operator-selected and does not replace local coordinator guidance.",
+      "bands": [
+        {
+          "id": "amateur_2m",
+          "label": "2 metres",
+          "segments": [
+            {
+              "start_hz": 145100000,
+              "end_hz": 145160000
+            },
+            {
+              "start_hz": 145170000,
+              "end_hz": 145230000
+            },
+            {
+              "start_hz": 145250000,
+              "end_hz": 145500000
+            },
+            {
+              "start_hz": 146600000,
+              "end_hz": 147400000
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "us-tasma",
+      "country": "US",
+      "region": "California (TASMA) coordination area",
+      "name": "California repeater-output coverage (TASMA)",
+      "sources": [
+        {
+          "title": "RepeaterBook Wiki: US Band Plans, California TASMA section",
+          "url": "https://www.repeaterbook.com/wiki/doku.php?id=band_plans"
+        }
+      ],
+      "notes": "Broad RF coverage from the California TASMA allocations reproduced in the RepeaterBook US Band Plans wiki. The continuous 145.120-145.480 MHz 2m repeater-output block and the two stated 33cm repeater/link-output envelopes are included. Individually listed 2m output channels and mixed input/output blocks are intentionally omitted because the source does not publish a scan-width allocation for them. This profile is operator-selected and does not imply that every included RF signal is a repeater.",
+      "bands": [
+        {
+          "id": "amateur_2m",
+          "label": "2 metres",
+          "segments": [
+            {
+              "start_hz": 145120000,
+              "end_hz": 145480000
+            }
+          ]
+        },
+        {
+          "id": "amateur_33cm",
+          "label": "33 centimetres",
+          "segments": [
+            {
+              "start_hz": 925000000,
+              "end_hz": 926987500
+            },
+            {
+              "start_hz": 927112500,
+              "end_hz": 927987500
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "us-orrc",
+      "country": "US",
+      "region": "Oregon Region Relay Council coordination territory",
+      "name": "Oregon repeater-output coverage (ORRC)",
+      "sources": [
+        {
+          "title": "RepeaterBook Wiki: US Band Plans, Oregon section",
+          "url": "https://www.repeaterbook.com/wiki/doku.php?id=band_plans"
+        },
+        {
+          "title": "ORRC Coordination Policies and Procedures, 8 June 2008, Appendix band plans",
+          "url": "https://www.orrc.org/docs/docOrrcPolicyProc.pdf"
+        }
+      ],
+      "notes": "Broad repeater-output RF coverage from the ORRC appendix band plans linked by the RepeaterBook US Band Plans wiki. The source document is dated 8 June 2008; it remains linked by ORRC, but its age is disclosed so operators can compare it with current local coordination guidance. The 2m output blocks and gap-separated 70cm output envelope are included. The 53.100-53.800 MHz 6m section is excluded because the source says it should not be coordinated pending a transition; unsupported bands are omitted. This profile is an operator-selected receive reference only.",
+      "bands": [
+        {
+          "id": "amateur_10m",
+          "label": "10 metres",
+          "segments": [
+            {
+              "start_hz": 29620000,
+              "end_hz": 29680000
+            }
+          ]
+        },
+        {
+          "id": "amateur_6m",
+          "label": "6 metres",
+          "segments": [
+            {
+              "start_hz": 52810000,
+              "end_hz": 53100000
+            },
+            {
+              "start_hz": 53800000,
+              "end_hz": 53990000
+            }
+          ]
+        },
+        {
+          "id": "amateur_2m",
+          "label": "2 metres",
+          "segments": [
+            {
+              "start_hz": 145110000,
+              "end_hz": 145490000
+            },
+            {
+              "start_hz": 146620000,
+              "end_hz": 147380000
+            }
+          ]
+        },
+        {
+          "id": "amateur_1_25m",
+          "label": "1.25 metres",
+          "segments": [
+            {
+              "start_hz": 223755000,
+              "end_hz": 224995000
+            }
+          ]
+        },
+        {
+          "id": "amateur_70cm",
+          "label": "70 centimetres",
+          "segments": [
+            {
+              "start_hz": 440025000,
+              "end_hz": 441500000
+            },
+            {
+              "start_hz": 441600000,
+              "end_hz": 444975000
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "us-miarc",
+      "country": "US",
+      "region": "Michigan Area Repeater Council lower-peninsula coordination area",
+      "name": "Michigan Lower Peninsula repeater-output coverage (MIARC)",
+      "sources": [
+        {
+          "title": "RepeaterBook Wiki: US Band Plans, Michigan section",
+          "url": "https://www.repeaterbook.com/wiki/doku.php?id=band_plans"
+        },
+        {
+          "title": "Michigan Area Repeater Council Band Plans",
+          "url": "https://www.miarc.com/bandplan.html"
+        }
+      ],
+      "notes": "Broad RF coverage from MIARC's current Lower Michigan band-plan tables, which the RepeaterBook US Band Plans wiki identifies as the Michigan coordinator. The profile includes published output envelopes only: 2m, 1.25m, 70cm, 33cm, and 23cm. It omits 6m because the published table mixes repeater and simplex allocation, and it omits isolated shared non-protected 70cm pairs rather than widening them. This profile is operator-selected and covers the Michigan Lower Peninsula only.",
+      "bands": [
+        {
+          "id": "amateur_10m",
+          "label": "10 metres",
+          "segments": [
+            {
+              "start_hz": 29620000,
+              "end_hz": 29680000
+            }
+          ]
+        },
+        {
+          "id": "amateur_2m",
+          "label": "2 metres",
+          "segments": [
+            {
+              "start_hz": 145110000,
+              "end_hz": 145490000
+            },
+            {
+              "start_hz": 146620000,
+              "end_hz": 147380000
+            }
+          ]
+        },
+        {
+          "id": "amateur_1_25m",
+          "label": "1.25 metres",
+          "segments": [
+            {
+              "start_hz": 223860000,
+              "end_hz": 224980000
+            }
+          ]
+        },
+        {
+          "id": "amateur_70cm",
+          "label": "70 centimetres",
+          "segments": [
+            {
+              "start_hz": 442000000,
+              "end_hz": 444987500
+            }
+          ]
+        },
+        {
+          "id": "amateur_33cm",
+          "label": "33 centimetres",
+          "segments": [
+            {
+              "start_hz": 919000000,
+              "end_hz": 922000000
+            },
+            {
+              "start_hz": 927487500,
+              "end_hz": 927725000
+            }
+          ]
+        },
+        {
+          "id": "amateur_23cm",
+          "label": "23 centimetres",
+          "segments": [
+            {
+              "start_hz": 1282000000,
+              "end_hz": 1288000000
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "de-darc",
+      "country": "DE",
+      "name": "Germany repeater-output coverage (DARC)",
+      "sources": [
+        {
+          "title": "DARC 2m Bandplan, August 2017",
+          "url": "https://www.darc.de/fileadmin/filemounts/referate/vus/bandplaene/VHF_Bandplan_2_m_August_2017.pdf"
+        },
+        {
+          "title": "DARC 70cm automatic-station Bandplan, May 2025, page 2",
+          "url": "https://www.darc.de/fileadmin/filemounts/referate/vus/bandplaene/UHF_Bandplan_70_cm_Mai_2025.pdf"
+        }
+      ],
+      "notes": "Repeater-output RF coverage, including FM and digital/packet allocations; this does not add digital decoding. The 70cm digital/packet channel envelopes follow DARC footnotes 4 and 6. Legacy simplex 438.200-438.275 MHz is excluded. Other simplex, input, paging and broadband-experiment allocations are excluded. National sources reviewed September 2026; the currently linked 2m plan is dated 2017.",
+      "bands": [
+        {
+          "id": "amateur_2m",
+          "label": "2 metres",
+          "segments": [
+            {
+              "start_hz": 145575000,
+              "end_hz": 145787500
+            }
+          ]
+        },
+        {
+          "id": "amateur_70cm",
+          "label": "70 centimetres",
+          "segments": [
+            {
+              "start_hz": 438300000,
+              "end_hz": 438525000
+            },
+            {
+              "start_hz": 438550000,
+              "end_hz": 439437500
+            },
+            {
+              "start_hz": 439450000,
+              "end_hz": 439587500
+            },
+            {
+              "start_hz": 439825000,
+              "end_hz": 439975000
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fr-ref",
+      "country": "FR",
+      "name": "France repeater-output coverage (REF)",
+      "sources": [
+        {
+          "title": "REF Commission THF 144-146 MHz Bandplan, November 2017",
+          "url": "https://thf.r-e-f.org/plans_des_bandes/144.htm"
+        },
+        {
+          "title": "REF Commission THF 430-440 MHz Bandplan, November 2017",
+          "url": "https://thf.r-e-f.org/plans_des_bandes/432.htm"
+        }
+      ],
+      "notes": "Repeater-output RF coverage from REF's national tables, reviewed September 2026; the tables are dated 2017. The 2m range retains the published allocation boundary. The 70cm range is the French NBFM output block. The 430.400-430.575 MHz digital-link/French repeater-input block and outputs labelled for other countries are excluded.",
+      "bands": [
+        {
+          "id": "amateur_2m",
+          "label": "2 metres",
+          "segments": [
+            {
+              "start_hz": 145575000,
+              "end_hz": 145793500
+            }
+          ]
+        },
+        {
+          "id": "amateur_70cm",
+          "label": "70 centimetres",
+          "segments": [
+            {
+              "start_hz": 430025000,
+              "end_hz": 430375000
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "at-oevsv",
+      "country": "AT",
+      "name": "Austria repeater-output coverage (ÖVSV)",
+      "sources": [
+        {
+          "title": "ÖVSV UKW-Referat 2m Bandplan, retrieved September 2026",
+          "url": "https://www.oevsv.at/funkbetrieb/ukw-referat/plan/Bandplan-2m/"
+        },
+        {
+          "title": "ÖVSV UKW-Referat 70cm Bandplan, retrieved September 2026",
+          "url": "https://www.oevsv.at/funkbetrieb/ukw-referat/plan/Bandplan-70cm/"
+        }
+      ],
+      "notes": "Repeater-output RF coverage from ÖVSV's national tables. The published 70cm relay-output envelope overlaps the listed 438.025 MHz OE Dapnet/POCSAG channel; inclusion does not identify every signal in that envelope as a repeater. Input, simplex and satellite allocations outside the output envelope are excluded.",
+      "bands": [
+        {
+          "id": "amateur_2m",
+          "label": "2 metres",
+          "segments": [
+            {
+              "start_hz": 145575000,
+              "end_hz": 145787500
+            }
+          ]
+        },
+        {
+          "id": "amateur_70cm",
+          "label": "70 centimetres",
+          "segments": [
+            {
+              "start_hz": 437975000,
+              "end_hz": 439087500
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "it-mimit",
+      "country": "IT",
+      "name": "Italy repeater-output coverage (MIMIT)",
+      "sources": [
+        {
+          "title": "MIMIT repeater circular, 16 May 2022, output-channel tables pages 10-11",
+          "url": "https://www.mimit.gov.it/images/stories/normativa/Circolare_16_05_2022_ripetitori_radioamatoriali.pdf"
+        }
+      ],
+      "notes": "Repeater-output channel envelopes from MIMIT's explicit Uscita/Downlink tables, reviewed September 2026. These are first-to-last output channel centres, without added edge padding. MIMIT identifies 431.225-431.600 MHz as output and 432.825-433.200 MHz as input; an ARI webpage reverses those labels, so this profile follows the ministry table. Inputs and satellite allocations are excluded.",
+      "bands": [
+        {
+          "id": "amateur_2m",
+          "label": "2 metres",
+          "segments": [
+            {
+              "start_hz": 145575000,
+              "end_hz": 145787500
+            }
+          ]
+        },
+        {
+          "id": "amateur_70cm",
+          "label": "70 centimetres",
+          "segments": [
+            {
+              "start_hz": 430025000,
+              "end_hz": 430387500
+            },
+            {
+              "start_hz": 431225000,
+              "end_hz": 431600000
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "au-wia",
+      "country": "AU",
+      "name": "Australia repeater-output coverage (WIA/ACMA)",
+      "sources": [
+        {
+          "title": "WIA Australian Amateur Radio Band Plan - Feb 2026",
+          "url": "https://www.wia.org.au/members/bandplans/data/documents/WIA%20Australian%20Band%20Plan%202026.pdf"
+        },
+        {
+          "title": "ACMA RALI AA3: Amateur (assigned) repeater station (146 MHz band), final release v5.0, 23 October 2024",
+          "url": "https://www.acma.gov.au/sites/default/files/2024-10/rali_aa3_amateur_assigned_repeater_station_146_mhz_frequency_assignment_requirements.pdf"
+        },
+        {
+          "title": "ACMA RALI AA4: Amateur (assigned) repeater station (438 MHz band), final release v5.0, 23 October 2024",
+          "url": "https://www.acma.gov.au/sites/default/files/2024-10/rali_aa4_amateur_assigned_repeater_station_438_mhz_frequency_assignment_requirements.pdf"
+        }
+      ],
+      "notes": "Broad RF coverage for national repeater-output scanning. WIA Feb 2026 allocation boundaries are used; ACMA AA3/AA4 Oct 2024 channel plans corroborate assigned transmit populations. Inputs, links, simplex, satellite, and low-power hotspot-only allocations are excluded. 2m Block C is digital-only/data and 147.0125-147.3875 includes D/E special-use sharing; 70cm Block B 439.7900-440.0000 permits either -7 or -5 MHz offset. No targets, tones, credentials, or digital decoding are implied.",
+      "bands": [
+        {
+          "id": "amateur_2m",
+          "label": "2 metres",
+          "segments": [
+            {
+              "start_hz": 144887500,
+              "end_hz": 145062500
+            },
+            {
+              "start_hz": 146612500,
+              "end_hz": 147387500
+            }
+          ]
+        },
+        {
+          "id": "amateur_70cm",
+          "label": "70 centimetres",
+          "segments": [
+            {
+              "start_hz": 438000000,
+              "end_hz": 438937500
+            },
+            {
+              "start_hz": 439612500,
+              "end_hz": 440000000
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ar-enacom",
+      "country": "AR",
+      "name": "Argentina repeater-output coverage (ENACOM/RCA)",
+      "sources": [
+        {
+          "title": "ENACOM Resolución E 3635/2017, Annex A frequency table, official government copy",
+          "url": "https://www.argentina.gob.ar/normativa/nacional/resoluci%C3%B3n-3635-2017-286986/texto"
+        },
+        {
+          "title": "ENACOM Resolución 1186/2024, Resolución 3635/2017 - modificación",
+          "url": "https://www.argentina.gob.ar/normativa/nacional/resoluci%C3%B3n-1186-2024-406719/texto"
+        },
+        {
+          "title": "Radio Club Argentino, Reglamento General de Radioaficionados, compiled August 2025",
+          "url": "https://www.lu4aa.org/wp/wp-content/uploads/2025/08/Reglamento-General-de-Radioaficionados-pagina-completa-10puntos-b.pdf"
+        }
+      ],
+      "notes": "Repeater-output RF coverage using ENACOM Annex A allocation boundaries (Resolution 3635/2017), cross-checked against RCA's August 2025 copy and reviewed September 2026. The two 2m output blocks and the 433-435 MHz output block share spectrum with simplex; not every signal within them is a repeater. The national table's repeater-input and satellite blocks are excluded. Digital/mixed-mode RF coverage does not add digital decoding. No individual repeater data is included.",
+      "bands": [
+        {
+          "id": "amateur_2m",
+          "label": "2 metres",
+          "segments": [
+            {
+              "start_hz": 145200000,
+              "end_hz": 145500000
+            },
+            {
+              "start_hz": 146600000,
+              "end_hz": 147400000
+            }
+          ]
+        },
+        {
+          "id": "amateur_70cm",
+          "label": "70 centimetres",
+          "segments": [
+            {
+              "start_hz": 433000000,
+              "end_hz": 435000000
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "be-uba",
+      "country": "BE",
+      "name": "Belgium repeater-output coverage (UBA)",
+      "sources": [
+        {
+          "title": "UBA current bandplan references, retrieved September 2026",
+          "url": "https://www.uba.be/nl/v-u-shf/bandplan"
+        },
+        {
+          "title": "IARU Region 1 VHF Bandplan, December 2020, linked by UBA",
+          "url": "https://www.iaru-r1.org/wp-content/uploads/2020/12/VHF-Bandplan.pdf"
+        },
+        {
+          "title": "IARU Region 1 UHF Bandplan, effective December 2020, linked by UBA",
+          "url": "https://www.iaru-r1.org/wp-content/uploads/2021/03/UHF-Bandplan.pdf"
+        },
+        {
+          "title": "UBA Belgian unmanned-station list, February 2023, TX-frequency tables pages 3-7",
+          "url": "https://www.uba.be/sites/default/files/media/files/Unmanned%20stations%20ON%2020230205.pdf"
+        }
+      ],
+      "notes": "Repeater-output RF coverage from UBA-linked bandplans, corroborated by UBA's Belgian TX-frequency list. The high UHF envelope extends to 439.5875 MHz to cover documented Belgian duplex outputs beyond the regional table's 439.425 MHz endpoint; this is a coverage envelope, not a newly inferred allocation. Digital/mixed-mode outputs are included without adding digital decoding. Input, satellite, simplex/link and paging blocks are excluded. Sources reviewed September 2026; currently linked plans/list date from 2020/2023.",
+      "bands": [
+        {
+          "id": "amateur_2m",
+          "label": "2 metres",
+          "segments": [
+            {
+              "start_hz": 145575000,
+              "end_hz": 145793500
+            }
+          ]
+        },
+        {
+          "id": "amateur_70cm",
+          "label": "70 centimetres",
+          "segments": [
+            {
+              "start_hz": 430025000,
+              "end_hz": 430375000
+            },
+            {
+              "start_hz": 438200000,
+              "end_hz": 438525000
+            },
+            {
+              "start_hz": 438650000,
+              "end_hz": 439587500
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
