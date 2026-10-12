@@ -1,8 +1,33 @@
-# Downloadable repeater-output scan-band profiles
+# Downloadable repeater receive scan-band profiles
 
 The timestamped JSON file is downloadable profile data for broad receiver sweeps. It contains no receiver binary, individual repeater targets, directory IDs, callsigns, coordinates, tones, credentials, or deployment manifest.
 
 Segments are inclusive integer-Hz RF coverage ranges for the named band-plan allocation. They preserve gaps between allocations and are not a claim that every frequency is occupied. A profile remains an operator-selected scan choice; it does not identify a signal as a particular repeater or grant operating authority.
+
+## `us-arrl`: recommended 2m/70cm
+
+The recommended US ARRL entry now contains only the two recommended bands.
+Its 2m coverage retains 145.20–145.50, 146.61–146.97 and 147.00–147.39 MHz,
+the [ARRL Band Plan](https://www.arrl.org/band-plan)'s FM repeater-output blocks.
+Its 70cm coverage is 442–445 and 447–450 MHz. ARRL describes these blocks as
+repeater **inputs and outputs under local option**, so this profile is explicitly
+labeled receive coverage. It does not assert nationwide output direction.
+The shared 445–447 MHz auxiliary/control/repeater/simplex block is omitted from
+this fallback. Use an applicable local coordinator profile or explicit custom
+coverage where the local plan differs.
+
+The separate `us-arrl-additional-bands` entry retains the previous 10m, 6m,
+1.25m, 33cm and 23cm ranges as an optional custom selection. Those bands are
+not activated by choosing the recommended two-band entry. The broad 6m blocks
+still contain their source's simplex, test-pair and remote-control exceptions;
+every frequency within them is not necessarily a repeater output.
+
+The other 14 previously published profiles retain their definitions. Partial
+profiles such as Arizona or Southern California are intentionally partial;
+absent bands are not fabricated. This catalog remains readable by existing
+clients without a schema change. Downloading it does not rewrite a saved scan
+plan or stored profile snapshot; only an explicit owner save applies settings.
+Retained timestamped files continue to serve clients using older manifests.
 
 ## `gb-rsgb`
 
