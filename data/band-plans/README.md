@@ -29,6 +29,33 @@ clients without a schema change. Downloading it does not rewrite a saved scan
 plan or stored profile snapshot; only an explicit owner save applies settings.
 Retained timestamped files continue to serve clients using older manifests.
 
+## October 2026 regional coverage audit
+
+All 16 profiles validate and generate bounded scan plans at the default 25 kHz
+bin size. Selected coverage is not a complete repeater directory or an output-only
+claim for every frequency in a broad envelope. Smaller ranges require a bin size
+no wider than the range; receiver-specific limits still apply.
+
+The TASMA profile now retains the paired output envelopes in its
+[October 2022 tables](https://www.tasma.org/wp-content/uploads/2022/11/Band-Plan_25Oct2022.pdf),
+including inverted 15 kHz pairs and digital voice outputs. Interleaved input
+channels and the 147.480 MHz simplex exception are described in the profile notes.
+Isolated channels are omitted rather than padded or connected through large gaps.
+This remains a selected 2m-only profile, requiring an explicit Custom selection.
+
+SCRRBA's 70cm receive envelope now ends at the cited 449.980 MHz rather than the
+old generic 448 MHz review-window boundary. Its
+[published plan](https://www.scrrba.org/BandPlans/440-450.pdf) contains simplex and
+test exceptions, so the profile is labeled repeater/link receive coverage.
+Receivers with narrower authorized limits reject the selection without changing
+their scan plan. ARCA's selected 2m-only scope is also explicit.
+
+Argentina's unavailable RCA compilation link is replaced by the official
+[ENACOM Annex A as replaced in 2018](https://www.enacom.gob.ar/multimedia/noticias/archivos/202106/archivo_20210615022726_5743.pdf).
+Its RF ranges are unchanged. The other 12 profiles, including the repaired US
+ARRL recommendation, retain their definitions. Older timestamped files remain
+unchanged; download, selection and saving are separate operator actions.
+
 ## `gb-rsgb`
 
 The [RSGB Band Plan January 2026](https://rsgb.services/public/bandplans/docs/260125_rsgb_band_plan_2026.pdf) provides the two included bands. Its 2m table gives the 145.5935–145.7935 MHz RV48–RV63 repeater-output allocation. Its 70cm table gives 430.8125–430.9750 MHz RU65–RU78 repeater outputs and the 432.9940–433.3810 MHz output allocation, including 433.0000–433.3750 MHz UK repeater-output channels. The JSON preserves those exact table allocation boundaries; it does not truncate them to channel centres.
@@ -75,11 +102,11 @@ Broad RF coverage for national repeater-output scanning. WIA Feb 2026 allocation
 
 ## `ar-enacom`
 
-[ENACOM Resolución E 3635/2017, Annex A frequency table, official government copy](https://www.argentina.gob.ar/normativa/nacional/resoluci%C3%B3n-3635-2017-286986/texto); [ENACOM Resolución 1186/2024, Resolución 3635/2017 - modificación](https://www.argentina.gob.ar/normativa/nacional/resoluci%C3%B3n-1186-2024-406719/texto); [Radio Club Argentino, Reglamento General de Radioaficionados, compiled August 2025](https://www.lu4aa.org/wp/wp-content/uploads/2025/08/Reglamento-General-de-Radioaficionados-pagina-completa-10puntos-b.pdf).
+[ENACOM Resolución E 3635/2017, official government copy](https://www.argentina.gob.ar/normativa/nacional/resoluci%C3%B3n-3635-2017-286986/texto); [ENACOM Resolución 1186/2024, Resolución 3635/2017 - modificación](https://www.argentina.gob.ar/normativa/nacional/resoluci%C3%B3n-1186-2024-406719/texto); [official Annex A as replaced by Resolución 508/2018, tables pages 8–9](https://www.enacom.gob.ar/multimedia/noticias/archivos/202106/archivo_20210615022726_5743.pdf).
 
 2 metres: 145.2–145.5 MHz, 146.6–147.4 MHz. 70 centimetres: 433–435 MHz.
 
-Repeater-output RF coverage using ENACOM Annex A allocation boundaries (Resolution 3635/2017), cross-checked against RCA's August 2025 copy and reviewed September 2026. The two 2m output blocks and the 433-435 MHz output block share spectrum with simplex; not every signal within them is a repeater. The national table's repeater-input and satellite blocks are excluded. Digital/mixed-mode RF coverage does not add digital decoding. No individual repeater data is included.
+Repeater-output RF coverage using ENACOM Annex A allocation boundaries as replaced in 2018, verified against the official document in October 2026. The unavailable RCA compilation link was replaced without changing any RF ranges. The two 2m output blocks and the 433-435 MHz output block share spectrum with simplex; not every signal within them is a repeater. The national table's repeater-input and satellite blocks are excluded. Digital/mixed-mode RF coverage does not add digital decoding. No individual repeater data is included.
 
 ## `be-uba`
 
