@@ -123,3 +123,19 @@ The Australia, Argentina and Belgium additions have no geographic recommendation
 Apollo Build 122 and later checks `manifest.json` for availability. Profile data downloads only after the operator explicitly chooses Download. Selecting bands and applying a profile fills the normal editable custom scan configuration; saving remains a separate operator action. The packages contain no geographic profile dataset.
 
 For maintainers: prepare reviewed source data with Apollo's `tools/prepare_band_plan_data.js`, using a newer UTC publication timestamp. Publish the resulting immutable timestamped JSON file first and verify its public SHA-256. Publish `manifest.json` last, retaining its matching filename, timestamp, and hash. Keep existing timestamped files available for clients that already fetched an earlier manifest. Data updates require no application rebuild.
+
+## Canada RAC receive plan (`ca-rac`)
+
+The Canada preset contains 2m repeater-output coverage at 145.100–145.500 and
+146.610–147.390 MHz from the [RAC 2m plan](https://www.rac.ca/144-mhz-2m-page/)
+(approved October 2020), plus 70cm coverage at 442–445 MHz from the
+[RAC 70cm plan](https://www.rac.ca/432-mhz-70-cm-page/) (approved September 1995).
+The 2m gap is preserved. The 70cm allocation is subject to local coordination
+and overlaps ATV below 444 MHz; other digital/link blocks are omitted because
+they do not establish nationwide repeater-output direction. These are receive
+ranges, not a fixed channel raster or a directory of repeaters.
+
+Operators check for catalog updates, choose Download, select the Canada RAC
+preset, review the ranges and explicitly activate/save the plan. Downloading
+alone preserves saved receiver settings. No application rebuild, node restart,
+reporting-policy change or geographic auto-selection is required.
